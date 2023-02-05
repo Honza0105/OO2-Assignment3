@@ -1,30 +1,33 @@
 package domain;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+
 import java.math.BigDecimal;
 
 public class Plane extends Asset {
-	private int maxAltitude;
-	private int numberOfPassengers;
+	private IntegerProperty maxAltitude;
+	private IntegerProperty numberOfPassengers;
 
 	public Plane(String name, String description, BigDecimal value, BigDecimal rentPerWeek, int maxAltitude, int numberOfPassengers) {
 		super(name, description, value, rentPerWeek);
-		this.maxAltitude = maxAltitude;
-		this.numberOfPassengers = numberOfPassengers;
+		this.maxAltitude = new SimpleIntegerProperty(maxAltitude);
+		this.numberOfPassengers = new SimpleIntegerProperty(numberOfPassengers);
 	}
 
 	public int getMaxAltitude() {
-		return maxAltitude;
+		return maxAltitude.get();
 	}
 
 	public void setMaxAltitude(int maxAltitude) {
-		this.maxAltitude = maxAltitude;
+		this.maxAltitude.set(maxAltitude);
 	}
 
 	public int getNumberOfPassengers() {
-		return numberOfPassengers;
+		return numberOfPassengers.get();
 	}
 
 	public void setNumberOfPassengers(int numberOfPassengers) {
-		this.numberOfPassengers = numberOfPassengers;
+		this.numberOfPassengers.set(numberOfPassengers);
 	}
 }

@@ -1,5 +1,8 @@
 package domain;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Objects;
@@ -7,8 +10,8 @@ import java.util.Objects;
 public abstract class Asset implements Comparable<Asset> {
 	private final BigInteger id;
 	private static BigInteger currentId = BigInteger.valueOf(2);
-	private String name;
-	private String description;
+	private StringProperty name;
+	private StringProperty description;
 	private BigDecimal value;
 	private BigDecimal rentPerWeek;
 	
@@ -16,26 +19,46 @@ public abstract class Asset implements Comparable<Asset> {
 		super();
 		this.id = currentId;
 		currentId = currentId.nextProbablePrime();
-		this.name = name;
-		this.description = description;
+		this.name = new SimpleStringProperty(name);
+		this.description = new SimpleStringProperty(description);
 		this.value = value;
 		this.rentPerWeek = rentPerWeek;
 	}
 
-	public String getName() {
+	public StringProperty getNameProperty() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getName() {
+		return name.get();
+	}
+
+	public StringProperty nameProperty() {
+		return name;
 	}
 
 	public String getDescription() {
+		return description.get();
+	}
+
+	public StringProperty descriptionProperty() {
+		return description;
+	}
+
+	public void setName(StringProperty name) {
+		this.name = name;
+	}
+	public void setName(String name) {
+		this.name.set(name);
+	}
+
+
+	public StringProperty getDescriptionProperty() {
 		return description;
 	}
 
 	public void setDescription(String description) {
-		this.description = description;
+		this.description.set(description);
 	}
 
 	public BigInteger getId() {

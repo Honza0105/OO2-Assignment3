@@ -1,11 +1,14 @@
 package domain;
 
+import javafx.beans.property.FloatProperty;
+import javafx.beans.property.SimpleFloatProperty;
+
 import java.math.BigDecimal;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class Island extends Asset {
-	private float area;
+	private FloatProperty area;
 	private Coordinate coordinate;
 	private Climate climate;
 	private SortedSet<Asset> assets;
@@ -13,7 +16,7 @@ public class Island extends Asset {
 	public Island(String name, String description, BigDecimal value, BigDecimal rentPerWeek, float area,
 			Coordinate coordinate, Climate climate, SortedSet<Asset> assets) {
 		super(name, description, value, rentPerWeek);
-		this.area = area;
+		this.area = new SimpleFloatProperty(area);
 		this.coordinate = coordinate;
 		this.climate = climate;
 		this.assets = assets;
@@ -22,7 +25,7 @@ public class Island extends Asset {
 	public Island(String name, String description, BigDecimal value, BigDecimal rentPerWeek, float area,
 			Coordinate coordinate, Climate climate) {
 		super(name, description, value, rentPerWeek);
-		this.area = area;
+		this.area = new SimpleFloatProperty(area);
 		this.coordinate = coordinate;
 		this.climate = climate;
 		this.assets = new TreeSet<>();
@@ -31,7 +34,7 @@ public class Island extends Asset {
 	public Island(String name, String description, BigDecimal value, BigDecimal rentPerWeek, float area,
 			float latitude, float longitude, Climate climate, SortedSet<Asset> assets) {
 		super(name, description, value, rentPerWeek);
-		this.area = area;
+		this.area = new SimpleFloatProperty(area);
 		this.coordinate = new Coordinate(latitude, longitude);
 		this.climate = climate;
 		this.assets = assets;
@@ -40,18 +43,18 @@ public class Island extends Asset {
 	public Island(String name, String description, BigDecimal value, BigDecimal rentPerWeek, float area,
 			float latitude, float longitude, Climate climate) {
 		super(name, description, value, rentPerWeek);
-		this.area = area;
+		this.area = new SimpleFloatProperty(area);
 		this.coordinate = new Coordinate(latitude, longitude);
 		this.climate = climate;
 		this.assets = new TreeSet<>();
 	}
 
 	public float getArea() {
-		return area;
+		return area.get();
 	}
 
 	public void setArea(float area) {
-		this.area = area;
+		this.area.set(area);
 	}
 
 	public Coordinate getCoordinate() {
@@ -84,7 +87,7 @@ public class Island extends Asset {
 		return assets.remove(asset);
 	}
 
-	public enum Climate { TROPICAL, SUBTROPICAL, TEMPERATE, CONTINTENTAL, ARCTIC 
+	public enum Climate { TROPICAL, SUBTROPICAL, TEMPERATE, CONTINENTAL, ARCTIC
 		
 	}
 	
