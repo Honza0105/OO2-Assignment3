@@ -16,22 +16,22 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Heirs">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" text="Show Heirs" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Assets">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" text="Show Assets" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Rents">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Show Rents" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Statistics">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Stat1" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="About">
