@@ -21,10 +21,27 @@ public class Island extends Asset {
 		this.climate = climate;
 		this.assets = assets;
 	}
+	public Island(String name, String description, BigDecimal value, float area,
+				  Coordinate coordinate, Climate climate, SortedSet<Asset> assets) {
+		super(name, description, value);
+		this.area = new SimpleFloatProperty(area);
+		this.coordinate = coordinate;
+		this.climate = climate;
+		this.assets = assets;
+	}
 	
 	public Island(String name, String description, BigDecimal value, BigDecimal rentPerWeek, float area,
 			Coordinate coordinate, Climate climate) {
 		super(name, description, value, rentPerWeek);
+		this.area = new SimpleFloatProperty(area);
+		this.coordinate = coordinate;
+		this.climate = climate;
+		this.assets = new TreeSet<>();
+	}
+
+	public Island(String name, String description, BigDecimal value, float area,
+				  Coordinate coordinate, Climate climate) {
+		super(name, description, value);
 		this.area = new SimpleFloatProperty(area);
 		this.coordinate = coordinate;
 		this.climate = climate;
@@ -39,10 +56,28 @@ public class Island extends Asset {
 		this.climate = climate;
 		this.assets = assets;
 	}
+
+	public Island(String name, String description, BigDecimal value, float area,
+				  float latitude, float longitude, Climate climate, SortedSet<Asset> assets) {
+		super(name, description, value);
+		this.area = new SimpleFloatProperty(area);
+		this.coordinate = new Coordinate(latitude, longitude);
+		this.climate = climate;
+		this.assets = assets;
+	}
 	
 	public Island(String name, String description, BigDecimal value, BigDecimal rentPerWeek, float area,
 			float latitude, float longitude, Climate climate) {
 		super(name, description, value, rentPerWeek);
+		this.area = new SimpleFloatProperty(area);
+		this.coordinate = new Coordinate(latitude, longitude);
+		this.climate = climate;
+		this.assets = new TreeSet<>();
+	}
+
+	public Island(String name, String description, BigDecimal value, float area,
+				  float latitude, float longitude, Climate climate) {
+		super(name, description, value);
 		this.area = new SimpleFloatProperty(area);
 		this.coordinate = new Coordinate(latitude, longitude);
 		this.climate = climate;

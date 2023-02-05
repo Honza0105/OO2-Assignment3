@@ -8,8 +8,9 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="493.0" prefWidth="1236.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AssetOverviewController">
+<AnchorPane prefHeight="493.0" prefWidth="1236.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Assets.AssetOverviewController">
    <children>
       <SplitPane dividerPositions="0.2354132901134522" layoutX="166.0" layoutY="167.0" prefHeight="493.0" prefWidth="1236.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -41,19 +42,52 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Name" />
-                        <Label text="Description" GridPane.rowIndex="1" />
-                        <Label text="Value" GridPane.rowIndex="2" />
-                        <Label text="Type" GridPane.rowIndex="3" />
-                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" />
-                        <Label fx:id="descriptionLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label fx:id="valueLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="typeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="Rent per week" GridPane.rowIndex="4" />
-                        <Label fx:id="rentPerWeekLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Name">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label text="Description" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label text="Value" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label text="Type" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label fx:id="descriptionLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label fx:id="valueLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label fx:id="typeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label text="Rent per week" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label fx:id="rentPerWeekLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
                      </children>
                   </GridPane>
-                  <Label layoutX="14.0" layoutY="14.0" text="Asset Details" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Label layoutX="300.0" layoutY="14.0" text="Asset Details" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="14.0">
+                     <font>
+                        <Font size="31.0" />
+                     </font></Label>
                </children></AnchorPane>
         </items>
       </SplitPane>

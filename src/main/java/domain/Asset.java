@@ -25,6 +25,15 @@ public abstract class Asset implements Comparable<Asset> {
 		this.rentPerWeek = rentPerWeek;
 	}
 
+	public Asset(String name, String description, BigDecimal value) {
+		super();
+		this.id = currentId;
+		currentId = currentId.nextProbablePrime();
+		this.name = new SimpleStringProperty(name);
+		this.description = new SimpleStringProperty(description);
+		this.value = value;
+		this.rentPerWeek = value.multiply(new BigDecimal("0.01"));
+	}
 	public StringProperty getNameProperty() {
 		return name;
 	}

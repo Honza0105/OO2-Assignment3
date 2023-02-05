@@ -1,4 +1,4 @@
-package view;
+package view.Assets;
 
 import app.Main;
 import domain.Asset;
@@ -64,7 +64,9 @@ public class AssetOverviewController {
             String valueFormatted = ProperFormats.bigDecimalProperFormat(value);
             valueLabel.setText(valueFormatted);
             typeLabel.setText(asset.getClass().getSimpleName());
-            rentPerWeekLabel.setText(asset.getRentPerWeek().toString()+ "x");
+            BigDecimal rentPerWeek = asset.getRentPerWeek();
+            String rentFormatted = ProperFormats.bigDecimalProperFormat(rentPerWeek);
+            rentPerWeekLabel.setText(rentFormatted);
         }
         else {
             nameLabel.setText("");

@@ -19,6 +19,15 @@ public class Yacht extends Asset {
 		this.huts = new SimpleIntegerProperty(huts);
 	}
 
+	public Yacht(String name, String description, BigDecimal value, double length,
+				 int numberOfDecks, double speed, int huts) {
+		super(name, description, value);
+		this.length = new SimpleDoubleProperty(length);
+		this.numberOfDecks = new SimpleIntegerProperty(numberOfDecks);
+		this.speed = new SimpleDoubleProperty(speed);
+		this.huts = new SimpleIntegerProperty(huts);
+	}
+
 	public double getLength() {
 		return length.get();
 	}

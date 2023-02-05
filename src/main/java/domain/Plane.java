@@ -15,6 +15,12 @@ public class Plane extends Asset {
 		this.numberOfPassengers = new SimpleIntegerProperty(numberOfPassengers);
 	}
 
+	public Plane(String name, String description, BigDecimal value, int maxAltitude, int numberOfPassengers) {
+		super(name, description, value);
+		this.maxAltitude = new SimpleIntegerProperty(maxAltitude);
+		this.numberOfPassengers = new SimpleIntegerProperty(numberOfPassengers);
+	}
+
 	public int getMaxAltitude() {
 		return maxAltitude.get();
 	}

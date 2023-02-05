@@ -13,6 +13,12 @@ public class Mansion extends Asset {
 		System.out.println(address);
 		this.address = new SimpleStringProperty(address);
 	}
+
+	public Mansion(String name, String description, String address, BigDecimal value) {
+		super(name, description, value);
+		System.out.println(address);
+		this.address = new SimpleStringProperty(address);
+	}
 	
 	public String getAddress() {
 		return address.get();
