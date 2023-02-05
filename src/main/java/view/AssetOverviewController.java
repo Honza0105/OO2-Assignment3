@@ -10,7 +10,6 @@ import javafx.scene.control.TableView;
 import util.ProperFormats;
 
 import java.math.BigDecimal;
-import java.text.Format;
 
 public class AssetOverviewController {
 
@@ -49,7 +48,12 @@ public class AssetOverviewController {
         showAssetDetails(null);
 
         assetTable.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> showAssetDetails(newValue));
-
+        assetTable.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2){
+                //brings up a detail screen with all properties. The user can edit these properties and save them here.
+                System.out.println("DoubleClick yay");
+            }
+        });
     }
 
     private void showAssetDetails(Asset asset){
