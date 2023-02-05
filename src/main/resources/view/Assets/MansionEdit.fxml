@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
+<?import javafx.scene.control.TextField?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Assets.MansionEditController">
    <children>
       <GridPane layoutX="200.0" layoutY="155.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -31,13 +32,14 @@
             <Label text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Label text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <Label text="Label" GridPane.columnIndex="1" />
-            <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label text="Label" GridPane.columnIndex="3" />
-            <Label text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Label text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Label text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+             <TextField text="Label" GridPane.columnIndex="1" />
+             <TextField text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+             <TextField text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+             <TextField text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+             <TextField text="Label" GridPane.columnIndex="3" />
+             <TextField text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+             <TextField text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+             <TextField text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>

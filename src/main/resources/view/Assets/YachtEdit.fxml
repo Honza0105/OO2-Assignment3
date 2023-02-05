@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -10,10 +11,10 @@
    <children>
       <GridPane layoutX="200.0" layoutY="155.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="89.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="210.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="113.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.0" minWidth="10.0" prefWidth="186.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -30,14 +31,14 @@
             <Label text="Speed" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Label text="Huts" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Label text="Length" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label text="Label" GridPane.columnIndex="1" />
-            <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label text="Label" GridPane.columnIndex="3" />
-            <Label text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Label text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Label text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField text="Label" GridPane.columnIndex="1" />
+            <TextField text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField text="Label" GridPane.columnIndex="3" />
+            <TextField text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>
