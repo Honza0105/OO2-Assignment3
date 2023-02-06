@@ -6,16 +6,16 @@ import javafx.scene.control.Label;
 
 public class IslandEditController {
     @FXML
-    private Label nameLabel;
+    private Label nameField;
 
     @FXML
-    private Label descriptionLabel;
+    private Label descriptionField;
 
     @FXML
-    private Label valueLabel;
+    private Label valueField;
 
     @FXML
-    private Label rentPerWeekLabel;
+    private Label rentPerWeekField;
 
     private Main main;
 
