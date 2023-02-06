@@ -77,7 +77,7 @@
                     <buttons>
                         <Button mnemonicParsing="false" text="Save" />
                         <Button mnemonicParsing="false" text="Exit" />
-                        <Label minWidth="38.0" prefHeight="16.0" text="Saved" textFill="#ff3a3a" />
+                        <Label minWidth="38.0" prefHeight="16.0" text="Saved" textFill="#ff3a3a" visible="false" />
                     </buttons>
                     <padding>
                         <Insets right="15.0" />
@@ -86,7 +86,7 @@
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                     <children>
                         <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="RENT" />
-                        <Label prefHeight="26.0" prefWidth="17.0" text="✓" textFill="#319e2a">
+                        <Label prefHeight="26.0" prefWidth="17.0" text="✓" textFill="#319e2a" visible="false">
                             <font>
                                 <Font size="19.0" />
                             </font>
