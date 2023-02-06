@@ -1,34 +1,35 @@
 package view.Assets;
 
 import app.Main;
+import domain.Yacht;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class YachtEditController {
 
     @FXML
-    private Label nameLabel;
+    private TextField nameField;
 
     @FXML
-    private Label descriptionLabel;
+    private TextField descriptionField;
 
     @FXML
-    private Label valueLabel;
+    private TextField valueField;
 
     @FXML
-    private Label rentPerWeekLabel;
+    private TextField rentPerWeekField;
 
     @FXML
-    private Label numberOfDecksLabel;
+    private TextField numberOfDecksField;
 
     @FXML
-    private Label speedLabel;
+    private TextField speedField;
 
     @FXML
-    private Label hutsLabel;
+    private TextField hutsField;
 
     @FXML
-    private Label lengthLabel;
+    private TextField lengthField;
 
     private Main main;
 
@@ -39,5 +40,16 @@ public class YachtEditController {
 
     public void setMain(Main main) {
         this.main = main;
+    }
+
+    public void setYacht(Yacht asset) {
+        nameField.setText(asset.getName());
+        descriptionField.setText(asset.getDescription());
+        valueField.setText(asset.getValue().toString());
+        rentPerWeekField.setText(asset.getRentPerWeek().toString());
+        numberOfDecksField.setText(String.valueOf(asset.getNumberOfDecks()));
+        speedField.setText(String.valueOf(asset.getSpeed()));
+        hutsField.setText(String.valueOf(asset.getHuts()));
+        lengthField.setText(String.valueOf(asset.getLength()));
     }
 }

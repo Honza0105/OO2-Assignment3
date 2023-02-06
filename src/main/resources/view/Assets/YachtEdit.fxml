@@ -50,35 +50,35 @@
             <Label text="Speed" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Label text="Huts" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Label text="Length" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <TextField text="Label" GridPane.columnIndex="1">
+            <TextField fx:id="nameField" text="Label" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets right="30.0" />
+               </GridPane.margin></TextField>
+            <TextField fx:id="descriptionField" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="30.0" />
+               </GridPane.margin></TextField>
+            <TextField fx:id="rentPerWeekField" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="30.0" />
+               </GridPane.margin></TextField>
+            <TextField fx:id="valueField" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets right="30.0" />
+               </GridPane.margin></TextField>
+            <TextField fx:id="numberOfDecksField" text="Label" GridPane.columnIndex="3">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin></TextField>
-            <TextField text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="speedField" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin></TextField>
-            <TextField text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="hutsField" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin></TextField>
-            <TextField text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets right="10.0" />
-               </GridPane.margin></TextField>
-            <TextField text="Label" GridPane.columnIndex="3">
-               <GridPane.margin>
-                  <Insets right="10.0" />
-               </GridPane.margin></TextField>
-            <TextField text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets right="10.0" />
-               </GridPane.margin></TextField>
-            <TextField text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets right="10.0" />
-               </GridPane.margin></TextField>
-            <TextField text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <TextField fx:id="lengthField" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin></TextField>
