@@ -19,4 +19,7 @@ public class IslandEditController {
 
     private Main main;
 
+    public void setMain(Main main) {
+        this.main = main;
+    }
 }

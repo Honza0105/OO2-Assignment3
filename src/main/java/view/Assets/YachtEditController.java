@@ -37,4 +37,7 @@ public class YachtEditController {
     }
 
 
+    public void setMain(Main main) {
+        this.main = main;
+    }
 }

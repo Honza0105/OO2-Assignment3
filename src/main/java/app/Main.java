@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import view.Assets.AssetOverviewController;
+import view.Assets.*;
 import view.RootLayoutController;
 
 import java.io.IOException;
@@ -115,8 +115,18 @@ public class Main extends Application {
 				AnchorPane assetOverview = fxmlLoader.load();
 
 				rootLayout.setCenter(assetOverview);
-				AssetOverviewController controller = fxmlLoader.getController();
-				controller.setMain(this);
+
+				Object controller = fxmlLoader.getController();
+
+				if (controller instanceof YachtEditController) {
+					((YachtEditController) controller).setMain(this);
+				} else if (controller instanceof IslandEditController) {
+					((IslandEditController) controller).setMain(this);
+				} else if (controller instanceof PlaneEditController) {
+					((PlaneEditController) controller).setMain(this);
+				} else if (controller instanceof MansionEditController) {
+					((MansionEditController) controller).setMain(this);
+				}
 
 			}
 
