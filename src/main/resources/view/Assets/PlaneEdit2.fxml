@@ -9,19 +9,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Assets.MansionEditController">
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Assets.PlaneEditController">
     <children>
-        <GridPane layoutX="200.0" layoutY="155.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <GridPane layoutX="200.0" layoutY="155.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="89.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="210.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="113.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.0" minWidth="10.0" prefWidth="186.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="175.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="111.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="224.0" />
             </columnConstraints>
             <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -44,7 +46,7 @@
                     <GridPane.margin>
                         <Insets left="10.0" />
                     </GridPane.margin></Label>
-                <Label text="Maximal altitude" GridPane.columnIndex="2" />
+                <Label text="Mamimal altitude" GridPane.columnIndex="2" />
                 <Label text="Number of passangers" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                 <TextField text="Label" GridPane.columnIndex="1">
                     <GridPane.margin>
@@ -70,22 +72,36 @@
                     <GridPane.margin>
                         <Insets right="10.0" />
                     </GridPane.margin></TextField>
+                <Label text="Rent to" GridPane.rowIndex="4">
+                    <GridPane.margin>
+                        <Insets left="10.0" />
+                    </GridPane.margin>
+                </Label>
+                <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <ButtonBar prefWidth="123.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                    <buttons>
+                        <Button mnemonicParsing="false" text="Save" />
+                        <Button mnemonicParsing="false" text="Exit" />
+                        <Label minWidth="38.0" prefHeight="16.0" text="Saved" textFill="#ff3a3a" visible="false" />
+                    </buttons>
+                    <padding>
+                        <Insets right="15.0" />
+                    </padding>
+                </ButtonBar>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                    <children>
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="RENT" />
+                        <Label prefHeight="26.0" prefWidth="17.0" text="✓" textFill="#319e2a" visible="false">
+                            <font>
+                                <Font size="19.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
             </children>
         </GridPane>
-        <ButtonBar layoutX="317.0" layoutY="352.0" prefHeight="40.0" prefWidth="200.0">
-            <buttons>
-                <Button mnemonicParsing="false" text="Exit" />
-                <Button mnemonicParsing="false" text="Save" />
-            </buttons>
-        </ButtonBar>
-        <Label layoutX="14.0" layoutY="362.0" text="Rent to" />
-        <ComboBox layoutX="95.0" layoutY="358.0" prefWidth="150.0" />
-        <Label layoutX="540.0" layoutY="364.0" text="Saved" textFill="#ff3a3a" visible="false" />
-        <Button layoutX="276.0" layoutY="358.0" mnemonicParsing="false" text="RENT" />
-        <Label layoutX="335.0" layoutY="358.0" prefHeight="26.0" prefWidth="17.0" text="✓" textFill="#319e2a" visible="false">
-            <font>
-                <Font size="19.0" />
-            </font>
-        </Label>
     </children>
 </AnchorPane>
