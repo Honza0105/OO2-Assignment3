@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
@@ -126,5 +127,6 @@
             <Font size="19.0" />
          </font>
       </Label>
+      <HBox layoutY="349.0" prefHeight="61.0" prefWidth="600.0" />
     </children>
 </AnchorPane>

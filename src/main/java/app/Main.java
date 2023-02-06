@@ -14,6 +14,8 @@ import view.RootLayoutController;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -25,8 +27,15 @@ public class Main extends Application {
 
 	private ObservableList<Asset> assetObservableList = FXCollections.observableArrayList();
 
+	private Map<Class<? extends Asset>, String> fxmlFileMap = new HashMap<>();
+
+
 
 	public Main() {
+		fxmlFileMap.put(Yacht.class,"/view/Assets/YachtEdit.fxml");
+		fxmlFileMap.put(Island.class,"/view/Assets/IslandEdit.fxml");
+		fxmlFileMap.put(Plane.class,"/view/Assets/PlaneEdit.fxml");
+		fxmlFileMap.put(Mansion.class,"/view/Assets/MansionEdit.fxml");
 		//sample data
 		Mansion mansion1 = new Mansion("Villa Grande", "Cool villa for Nuniks","Italy, Rome 21", new BigDecimal("20000000"));
 		Plane plane1 = new Plane("Boeing737","No space for legs",new BigDecimal("80000000"),10000,150);
@@ -83,6 +92,7 @@ public class Main extends Application {
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader();
 			fxmlLoader.setLocation(Main.class.getResource("/view/Assets/AssetOverview.fxml"));
+			System.out.println(fxmlLoader.getLocation());
 			AnchorPane assetOverview = fxmlLoader.load();
 
 			rootLayout.setCenter(assetOverview);
@@ -92,6 +102,29 @@ public class Main extends Application {
 		catch (IOException e){
 			e.printStackTrace();
 		}
+	}
+
+	public void showAssetEdit(Asset asset) {
+		String fxmlFile = fxmlFileMap.get(asset.getClass());
+		System.out.println(fxmlFile);
+		try {
+			if (fxmlFile != null) {
+				FXMLLoader fxmlLoader = new FXMLLoader();
+				fxmlLoader.setLocation(Main.class.getResource(fxmlFile));
+				System.out.println(fxmlLoader.getLocation());
+				AnchorPane assetOverview = fxmlLoader.load();
+
+				rootLayout.setCenter(assetOverview);
+				AssetOverviewController controller = fxmlLoader.getController();
+				controller.setMain(this);
+
+			}
+
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	public static void main(String[] args) {

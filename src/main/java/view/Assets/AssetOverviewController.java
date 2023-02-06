@@ -1,15 +1,22 @@
 package view.Assets;
 
 import app.Main;
-import domain.Asset;
+import domain.*;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 import util.ProperFormats;
 
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AssetOverviewController {
 
@@ -38,9 +45,11 @@ public class AssetOverviewController {
     private Label rentPerWeekLabel;
 
     private Main main;
-    
+
+
     @FXML
     public void initialize() {
+
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         typeColumn.setCellValueFactory(cellData ->
                 new SimpleStringProperty(cellData.getValue().getClass().getSimpleName()));
@@ -51,10 +60,16 @@ public class AssetOverviewController {
         assetTable.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2){
                 //brings up a detail screen with all properties. The user can edit these properties and save them here.
-                System.out.println("DoubleClick yay");
+                Asset selectedAsset = assetTable.getSelectionModel().getSelectedItem();
+                System.out.println("Selected Asset: " + selectedAsset.getName());
+                main.showAssetEdit(selectedAsset);
+                System.out.println("huh?");
             }
         });
     }
+
+
+
 
     private void showAssetDetails(Asset asset){
         if (asset != null){
