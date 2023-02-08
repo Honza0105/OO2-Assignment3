@@ -1,25 +1,33 @@
 package view.Assets;
 
 import app.Main;
+import domain.Island;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class IslandEditController {
     @FXML
-    private Label nameField;
+    private TextField nameField;
 
     @FXML
-    private Label descriptionField;
+    private TextField descriptionField;
 
     @FXML
-    private Label valueField;
+    private TextField valueField;
 
     @FXML
-    private Label rentPerWeekField;
+    private TextField rentPerWeekField;
 
     private Main main;
 
     public void setMain(Main main) {
         this.main = main;
+    }
+
+
+    public void setIsland(Island asset) {
+        //develop
+        System.out.println("To be developed");
     }
 }

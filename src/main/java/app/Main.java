@@ -123,13 +123,13 @@ public class Main extends Application {
 					((YachtEditController) controller).setYacht((Yacht) asset);
 				} else if (controller instanceof IslandEditController) {
 					((IslandEditController) controller).setMain(this);
-//					((IslandEditController) controller).setIsland((Island) asset);
+					((IslandEditController) controller).setIsland((Island) asset);
 				} else if (controller instanceof PlaneEditController) {
 					((PlaneEditController) controller).setMain(this);
 					((PlaneEditController) controller).setPlane((Plane) asset);
 				} else if (controller instanceof MansionEditController) {
 					((MansionEditController) controller).setMain(this);
-//					((MansionEditController) controller).setMansion((Mansion) asset);
+					((MansionEditController) controller).setMansion((Mansion) asset);
 				}
 
 			}
