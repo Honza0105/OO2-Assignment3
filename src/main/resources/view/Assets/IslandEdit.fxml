@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Assets.MansionEditController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Assets.IslandEditController">
     <children>
         <GridPane layoutX="200.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <columnConstraints>
@@ -53,27 +53,27 @@
                     <GridPane.margin>
                         <Insets left="10.0" />
                     </GridPane.margin></Label>
-                <TextField text="Label" GridPane.columnIndex="1">
+                <TextField fx:id="nameField" text="Label" GridPane.columnIndex="1">
                     <GridPane.margin>
                         <Insets left="5.0" right="10.0" />
                     </GridPane.margin></TextField>
-                <TextField prefHeight="55.0" prefWidth="124.0" text="Label" GridPane.columnIndex="5">
+                <TextField fx:id="descriptionField" prefHeight="55.0" prefWidth="124.0" text="Label" GridPane.columnIndex="5">
                     <GridPane.margin>
                         <Insets left="5.0" right="10.0" />
                     </GridPane.margin></TextField>
-                <TextField text="Label" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                <TextField fx:id="rentPerWeekField" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="1">
                     <GridPane.margin>
                         <Insets left="5.0" right="10.0" />
                     </GridPane.margin></TextField>
-                <TextField text="Label" GridPane.columnIndex="3">
+                <TextField fx:id="valueField" text="Label" GridPane.columnIndex="3">
                     <GridPane.margin>
                         <Insets left="5.0" right="10.0" />
                     </GridPane.margin></TextField>
-                <TextField prefWidth="240.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                <TextField fx:id="latitudeField" prefWidth="240.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1">
                     <GridPane.margin>
                         <Insets left="5.0" right="10.0" />
                     </GridPane.margin></TextField>
-                <TextField prefWidth="102.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <TextField fx:id="longitudeField" prefWidth="102.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <GridPane.margin>
                         <Insets left="5.0" right="10.0" />
                     </GridPane.margin></TextField>
@@ -92,7 +92,7 @@
                         <Insets left="10.0" />
                     </GridPane.margin>
                 </Label>
-                <TextField text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <TextField fx:id="areaField" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
                     <GridPane.margin>
                         <Insets left="5.0" right="10.0" />
                     </GridPane.margin>

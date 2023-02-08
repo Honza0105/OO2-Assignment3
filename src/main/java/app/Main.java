@@ -46,7 +46,7 @@ public class Main extends Application {
 		island1Assets.add(mansion1);
 
 		assetObservableList.add(new Island("Isla Grande", "Cool island tbh", new BigDecimal("2000000000"),new BigDecimal(1000000),99.9f,52.3269544f,4.9621217f, Island.Climate.TEMPERATE,island1Assets));
-		Yacht yacht1 = new Yacht("Jan Zizka","Rest in peace",new BigDecimal("1000000"),new BigDecimal("20000000"),45.0d,3,80d,10);
+		Yacht yacht1 = new Yacht("Jan Žižka","Rest in peace",new BigDecimal("1000000"),new BigDecimal("20000000"),45.0d,3,80d,10);
 		assetObservableList.add(yacht1);
 	}
 

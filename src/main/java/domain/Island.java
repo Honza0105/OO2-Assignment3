@@ -96,6 +96,14 @@ public class Island extends Asset {
 		return coordinate;
 	}
 
+	public float getLongitude() {
+		return coordinate.longitude;
+	}
+
+	public float getLatitude() {
+		return coordinate.latitude;
+	}
+
 	public void setCoordinate(Coordinate coordinate) {
 		this.coordinate = coordinate;
 	}
