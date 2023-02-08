@@ -2,11 +2,11 @@ package view.Assets;
 
 import app.Main;
 import domain.Island;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-
-import java.net.CookieHandler;
 
 public class IslandEditController {
     @FXML
@@ -30,11 +30,18 @@ public class IslandEditController {
     @FXML
     private TextField areaField;
 
+    @FXML
+    private ComboBox<Island.Climate> climateComboBox;
+
+    private ObservableList<Island.Climate> climates = FXCollections.observableArrayList(Island.Climate.TROPICAL, Island.Climate.SUBTROPICAL, Island.Climate.TEMPERATE, Island.Climate.CONTINENTAL, Island.Climate.ARCTIC);
+
     private Main main;
 
     public void setMain(Main main) {
         this.main = main;
     }
+
+
 
 
     public void setIsland(Island asset) {
@@ -46,5 +53,7 @@ public class IslandEditController {
         longitudeField.setText(String.valueOf(asset.getLongitude()));
         latitudeField.setText(String.valueOf(asset.getLatitude()));
         areaField.setText(String.valueOf(asset.getArea()));
+        climateComboBox.setItems(climates);
+        climateComboBox.setValue(asset.getClimate());
     }
 }

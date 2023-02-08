@@ -87,7 +87,7 @@
                         <Insets left="10.0" />
                     </GridPane.margin>
                 </Label>
-                <Label prefHeight="70.0" prefWidth="136.0" text="Area" GridPane.rowIndex="2">
+                <Label prefHeight="70.0" prefWidth="136.0" text="Area(km2)" GridPane.rowIndex="2">
                     <GridPane.margin>
                         <Insets left="10.0" />
                     </GridPane.margin>
@@ -97,7 +97,7 @@
                         <Insets left="5.0" right="10.0" />
                     </GridPane.margin>
                 </TextField>
-                <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                <ComboBox fx:id="climateComboBox" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                     <GridPane.margin>
                         <Insets left="5.0" right="10.0" />
                     </GridPane.margin>
