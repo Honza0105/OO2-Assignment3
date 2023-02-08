@@ -5,8 +5,12 @@ import domain.Island;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+
+import java.util.Optional;
 
 public class IslandEditController {
     @FXML
@@ -37,8 +41,16 @@ public class IslandEditController {
 
     private Main main;
 
+    private boolean saved;
+
+    private Island island;
+
     public void setMain(Main main) {
         this.main = main;
+    }
+
+    public void initialize() {
+        saved = false;
     }
 
 
@@ -55,5 +67,49 @@ public class IslandEditController {
         areaField.setText(String.valueOf(asset.getArea()));
         climateComboBox.setItems(climates);
         climateComboBox.setValue(asset.getClimate());
+        this.island = asset;
+    }
+
+    @FXML
+    public void saveEditDialog(){
+        if (isInputValid()){
+            island.setName(nameField.getText());
+            island.setDescription(descriptionField.getText());
+
+
+            saved = true;
+        }
+    }
+
+    private boolean isInputValid() {
+        return true;
+    }
+
+    @FXML
+    public void exitEditDialog(){
+        if (saved){
+            main.showAssetOverview();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(main.getStage());
+            alert.setTitle("File not saved");
+            alert.setHeaderText("Are you sure?");
+            alert.setContentText("If not saved, all changes will be lost.");
+            ButtonType buttonSaveBeforeExit = new ButtonType("Save before exit");
+            ButtonType buttonExitAnyways = new ButtonType("Exit anyways");
+
+            alert.getButtonTypes().setAll(buttonSaveBeforeExit, buttonExitAnyways);
+
+            Optional<ButtonType> result = alert.showAndWait();
+
+            if (result.get() == buttonSaveBeforeExit) {
+                saveEditDialog();
+                main.showAssetOverview();
+            } else if (result.get() == buttonExitAnyways) {
+                main.showAssetOverview();
+            }
+
+        }
     }
 }

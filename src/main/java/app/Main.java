@@ -72,6 +72,10 @@ public class Main extends Application {
 
 		showAssetOverview();
 	}
+
+	public Stage getStage(){
+		return primaryStage;
+	}
 	
 	private void initRootLayout() {
 		try {
