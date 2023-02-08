@@ -130,13 +130,23 @@ public class Island extends Asset {
 		return assets.remove(asset);
 	}
 
+	public void setLongitude(float newLongitude) {
+		coordinate.setLongitude(newLongitude);
+	}
+
+	public void setLatitude(float newLatitude) {
+		coordinate.setLatitude(newLatitude);
+	}
+
+
+
 	public enum Climate { TROPICAL, SUBTROPICAL, TEMPERATE, CONTINENTAL, ARCTIC
 		
 	}
 	
 	class Coordinate {
-		private final float latitude;
-		private final float longitude;
+		private float latitude;
+		private float longitude;
 		
 		public Coordinate(float latitude, float longitude) {
 			super();
@@ -150,6 +160,14 @@ public class Island extends Asset {
 		
 		public float getLongitude() {
 			return longitude;
+		}
+
+		public void setLatitude(float latitude) {
+			this.latitude = latitude;
+		}
+
+		public void setLongitude(float longitude) {
+			this.longitude = longitude;
 		}
 	}
 }

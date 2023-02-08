@@ -10,7 +10,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
+import java.math.BigDecimal;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 public class IslandEditController {
     @FXML
@@ -75,6 +77,10 @@ public class IslandEditController {
         if (isInputValid()){
             island.setName(nameField.getText());
             island.setDescription(descriptionField.getText());
+            island.setValue(new BigDecimal(valueField.getText()));
+            island.setRentPerWeek(new BigDecimal(rentPerWeekField.getText()));
+            island.setLongitude(Float.parseFloat(longitudeField.getText()));
+            island.setLatitude(Float.parseFloat(latitudeField.getText()));
 
 
             saved = true;
@@ -82,7 +88,44 @@ public class IslandEditController {
     }
 
     private boolean isInputValid() {
-        return true;
+        Pattern positiveDecimal = Pattern.compile("^\\d+(\\.\\d+)?$");
+        String alertMessage = "";
+
+        if (nameField.getText() == null || nameField.getText().length() == 0) {
+            alertMessage += "No valid name!\n";
+        }
+        if (descriptionField.getText() == null || descriptionField.getText().length() == 0) {
+            alertMessage += "No valid description!\n";
+        }
+
+        if (!positiveDecimal.matcher(valueField.getText()).find()){
+            alertMessage += "Value can only contain decimals!";
+        }
+
+        if (!positiveDecimal.matcher(rentPerWeekField.getText()).find()){
+            alertMessage += "Rent per week can only contain decimals!";
+        }
+
+        if (!positiveDecimal.matcher(longitudeField.getText()).find()){
+            alertMessage += "Longitude can only contain decimals!";
+        }
+        if (!positiveDecimal.matcher(latitudeField.getText()).find()){
+            alertMessage += "Latitude can only contain decimals!";
+        }
+
+        if (alertMessage.length()==0){
+            return true;
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(main.getStage());
+            alert.setTitle("Invalid Fields");
+            alert.setHeaderText("Please correct invalid fields");
+            alert.setContentText(alertMessage);
+            alert.showAndWait();
+
+            return false;
+        }
     }
 
     @FXML
