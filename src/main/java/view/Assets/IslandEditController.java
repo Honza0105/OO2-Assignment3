@@ -45,6 +45,8 @@ public class IslandEditController {
 
     private boolean saved;
 
+    private boolean pressedExit;
+
     private Island island;
 
     public void setMain(Main main) {
@@ -81,6 +83,9 @@ public class IslandEditController {
             island.setRentPerWeek(new BigDecimal(rentPerWeekField.getText()));
             island.setLongitude(Float.parseFloat(longitudeField.getText()));
             island.setLatitude(Float.parseFloat(latitudeField.getText()));
+            island.setArea(Float.parseFloat(areaField.getText()));
+            island.setClimate(climateComboBox.getValue());
+
 
 
             saved = true;
@@ -99,21 +104,24 @@ public class IslandEditController {
         }
 
         if (!positiveDecimal.matcher(valueField.getText()).find()){
-            alertMessage += "Value can only contain decimals!";
+            alertMessage += "Value can only contain decimals!\n";
         }
 
         if (!positiveDecimal.matcher(rentPerWeekField.getText()).find()){
-            alertMessage += "Rent per week can only contain decimals!";
+            alertMessage += "Rent per week can only contain decimals!\n";
         }
 
         if (!positiveDecimal.matcher(longitudeField.getText()).find()){
-            alertMessage += "Longitude can only contain decimals!";
+            alertMessage += "Longitude can only contain decimals!\n";
         }
         if (!positiveDecimal.matcher(latitudeField.getText()).find()){
-            alertMessage += "Latitude can only contain decimals!";
+            alertMessage += "Latitude can only contain decimals!\n";
+        }
+        if (!positiveDecimal.matcher(areaField.getText()).find()){
+            alertMessage += "Area can only contain decimals!\n";
         }
 
-        if (alertMessage.length()==0){
+        if (alertMessage.length()==0 || pressedExit){
             return true;
         }
         else{
@@ -147,6 +155,7 @@ public class IslandEditController {
             Optional<ButtonType> result = alert.showAndWait();
 
             if (result.get() == buttonSaveBeforeExit) {
+                pressedExit = true;
                 saveEditDialog();
                 main.showAssetOverview();
             } else if (result.get() == buttonExitAnyways) {
