@@ -92,8 +92,8 @@
              <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
              <ButtonBar prefWidth="123.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
                  <buttons>
-                     <Button mnemonicParsing="false" text="Save" />
-                     <Button mnemonicParsing="false" text="Exit" />
+                     <Button mnemonicParsing="false" onAction="#saveEditDialog" text="Save" />
+                     <Button cancelButton="true" mnemonicParsing="false" onAction="#exitEditDialog" text="Exit" />
                    <Label minWidth="38.0" prefHeight="16.0" text="Saved" textFill="#ff3a3a" visible="false" />
                  </buttons>
                <padding>

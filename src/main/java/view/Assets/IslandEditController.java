@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import util.ProperFormats;
 
 import java.math.BigDecimal;
 import java.util.Optional;
@@ -93,32 +94,16 @@ public class IslandEditController {
     }
 
     private boolean isInputValid() {
-        Pattern positiveDecimal = Pattern.compile("^\\d+(\\.\\d+)?$");
-        String alertMessage = "";
+        String alertMessage = ProperFormats.isSharedInputValid(nameField,descriptionField,valueField,rentPerWeekField);
 
-        if (nameField.getText() == null || nameField.getText().length() == 0) {
-            alertMessage += "No valid name!\n";
+        if (!ProperFormats.positiveDecimalFormat(longitudeField.getText())){
+            alertMessage += "Longitude can only contain positive decimals!\n";
         }
-        if (descriptionField.getText() == null || descriptionField.getText().length() == 0) {
-            alertMessage += "No valid description!\n";
+        if (!ProperFormats.positiveDecimalFormat(latitudeField.getText())){
+            alertMessage += "Latitude can only contain positive decimals!\n";
         }
-
-        if (!positiveDecimal.matcher(valueField.getText()).find()){
-            alertMessage += "Value can only contain decimals!\n";
-        }
-
-        if (!positiveDecimal.matcher(rentPerWeekField.getText()).find()){
-            alertMessage += "Rent per week can only contain decimals!\n";
-        }
-
-        if (!positiveDecimal.matcher(longitudeField.getText()).find()){
-            alertMessage += "Longitude can only contain decimals!\n";
-        }
-        if (!positiveDecimal.matcher(latitudeField.getText()).find()){
-            alertMessage += "Latitude can only contain decimals!\n";
-        }
-        if (!positiveDecimal.matcher(areaField.getText()).find()){
-            alertMessage += "Area can only contain decimals!\n";
+        if (!ProperFormats.positiveDecimalFormat(areaField.getText())){
+            alertMessage += "Area can only contain positive decimals!\n";
         }
 
         if (alertMessage.length()==0 || pressedExit){
