@@ -1,5 +1,6 @@
 package domain;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.math.BigDecimal;
@@ -21,13 +22,13 @@ public class Heir {
 
 
 
-	public Heir(StringProperty name, StringProperty address, LocalDate dateOfBirth, Gender gender, BigDecimal netWorth,
+	public Heir(String name, String address, LocalDate dateOfBirth, Gender gender, BigDecimal netWorth,
 				BigDecimal income) {
 		super();
 		this.id = currentId;
 		currentId = currentId.nextProbablePrime();
-		this.name = name;
-		this.address = address;
+		this.name = new SimpleStringProperty(name);
+		this.address = new SimpleStringProperty(address);
 		this.dateOfBirth = dateOfBirth;
 		this.gender = gender;
 		this.netWorth = netWorth;

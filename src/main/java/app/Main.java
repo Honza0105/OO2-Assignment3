@@ -11,9 +11,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import view.Assets.*;
 import view.RootLayoutController;
+import view.persons.PersonOverviewController;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.SortedSet;
@@ -40,7 +42,7 @@ public class Main extends Application {
 		fxmlFileMap.put(Island.class,"/view/Assets/IslandEdit.fxml");
 		fxmlFileMap.put(Plane.class,"/view/Assets/PlaneEdit.fxml");
 		fxmlFileMap.put(Mansion.class,"/view/Assets/MansionEdit.fxml");
-		//sample data
+		//sample Assets data
 		Mansion mansion1 = new Mansion("Villa Grande", "Cool villa for Nuniks","Italy, Rome 21", new BigDecimal("20000000"));
 		Plane plane1 = new Plane("Boeing737","No space for legs",new BigDecimal("80000000"),10000,150);
 		assetObservableList.add(mansion1);
@@ -52,6 +54,11 @@ public class Main extends Application {
 		assetObservableList.add(new Island("Isla Grande", "Cool island tbh", new BigDecimal("2000000000"),new BigDecimal(1000000),99.9f,52.3269544f,4.9621217f, Island.Climate.TEMPERATE,island1Assets));
 		Yacht yacht1 = new Yacht("Jan Žižka","Rest in peace",new BigDecimal("1000000"),new BigDecimal("20000000"),45.0d,3,80d,10);
 		assetObservableList.add(yacht1);
+
+		//sample Heir data
+		Heir john = new Heir("John Johnson", "Amsterdam Noord 12", LocalDate.of(1970,11,11), Heir.Gender.MALE,new BigDecimal("10000000"),new BigDecimal("150000"));
+		heirObservableList.add(john);
+
 	}
 
 	public ObservableList<Heir> getHeirObservableList() {
@@ -122,7 +129,7 @@ public class Main extends Application {
 			AnchorPane personOverview = fxmlLoader.load();
 
 			rootLayout.setCenter(personOverview);
-			AssetOverviewController controller = fxmlLoader.getController();
+			PersonOverviewController controller = fxmlLoader.getController();
 			controller.setMain(this);
 		}
 		catch (IOException e){

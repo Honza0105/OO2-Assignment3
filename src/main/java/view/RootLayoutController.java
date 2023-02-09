@@ -59,7 +59,7 @@ public class RootLayoutController {
 
 	@FXML
 	public void showHeirsMenuButton(){
-		if (main.isSaved()){
+		if (main.isSaved() || !main.isEditScene()){
 			main.showHeirOverview();
 		}
 		else {

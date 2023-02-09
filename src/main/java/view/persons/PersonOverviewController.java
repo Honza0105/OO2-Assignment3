@@ -1,5 +1,6 @@
 package view.persons;
 
+import app.Main;
 import domain.Asset;
 import domain.Heir;
 import javafx.beans.property.SimpleStringProperty;
@@ -38,6 +39,8 @@ public class PersonOverviewController {
     @FXML
     private ListView<Asset> assetsListView;
 
+    private Main main;
+
     @FXML
     public void initialize() {
 
@@ -56,5 +59,12 @@ public class PersonOverviewController {
 //                System.out.println("huh?");
 //            }
 //        });
+    }
+
+    public void setMain(Main main) {
+        this.main = main;
+
+
+        heirTableView.setItems(main.getHeirObservableList());
     }
 }
