@@ -1,12 +1,10 @@
 package view.Assets;
 
 import app.Main;
+import domain.Island;
 import domain.Yacht;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import util.ProperFormats;
 
 import java.math.BigDecimal;
@@ -41,6 +39,12 @@ public class YachtEditController {
     @FXML
     private Label savedLabel;
 
+    @FXML
+    private ComboBox<Island> islandComboBox;
+
+    @FXML
+    private CheckBox removeIslandCheckBox;
+
     private Main main;
 
     private boolean saved;
@@ -48,6 +52,9 @@ public class YachtEditController {
     private boolean pressedExit;
 
     private Yacht yacht;
+
+
+
 
     public void initialize() {
 
@@ -69,6 +76,8 @@ public class YachtEditController {
         speedField.setText(String.valueOf(asset.getSpeed()));
         hutsField.setText(String.valueOf(asset.getHuts()));
         lengthField.setText(String.valueOf(asset.getLength()));
+        islandComboBox.setItems(main.getIslandObservableList());
+        islandComboBox.setValue(asset.getHomeIsland());
 
         this.yacht = asset;
     }
@@ -114,6 +123,12 @@ public class YachtEditController {
             yacht.setHuts(Integer.parseInt(hutsField.getText()));
             yacht.setLength(Double.parseDouble(lengthField.getText()));
             savedLabel.setVisible(true);
+            if (removeIslandCheckBox.isSelected()){
+                removeFromIsland();
+            }
+            else{
+                yacht.setHomeIsland(islandComboBox.getValue());
+            }
 
 
             main.setSaved(true);
@@ -151,5 +166,8 @@ public class YachtEditController {
 
             return false;
         }
+    }
+    public void removeFromIsland(){
+        yacht.setHomeIsland(null);
     }
 }

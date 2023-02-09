@@ -40,10 +40,6 @@ public class Main extends Application {
 
 
 	public Main() {
-		Island defaultIsland = new Island("No Island",
-				"This is fictional island where everything is put which doesn't belong to an island",
-				null,0,null,null);
-		islandObservableList.add(defaultIsland);
 		fxmlFileMap.put(Yacht.class,"/view/Assets/YachtEdit.fxml");
 		fxmlFileMap.put(Island.class,"/view/Assets/IslandEdit.fxml");
 		fxmlFileMap.put(Plane.class,"/view/Assets/PlaneEdit.fxml");
@@ -203,6 +199,10 @@ public class Main extends Application {
 
 	public void setEditScene(boolean editScene) {
 		this.editScene = editScene;
+	}
+
+	public ObservableList<Island> getIslandObservableList() {
+		return islandObservableList;
 	}
 
 	public static void main(String[] args) {

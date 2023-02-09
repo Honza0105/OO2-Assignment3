@@ -9,6 +9,8 @@ public class Yacht extends Asset {
 	private IntegerProperty numberOfDecks;
 	private DoubleProperty speed;
 	private IntegerProperty huts;
+
+	private Island homeIsland;
 	
 	public Yacht(String name, String description, BigDecimal value, BigDecimal rentPerWeek, double length,
 				 int numberOfDecks, double speed, int huts) {
@@ -58,6 +60,14 @@ public class Yacht extends Asset {
 
 	public void setHuts(int huts) {
 		this.huts.set(huts);
+	}
+
+	public Island getHomeIsland() {
+		return homeIsland;
+	}
+
+	public void setHomeIsland(Island homeIsland) {
+		this.homeIsland = homeIsland;
 	}
 
 	@Override
