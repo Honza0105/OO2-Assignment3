@@ -29,6 +29,8 @@ public class Main extends Application {
 
 	private ObservableList<Asset> assetObservableList = FXCollections.observableArrayList();
 
+	private ObservableList<Island> islandObservableList = FXCollections.observableArrayList();
+
 	private Map<Class<? extends Asset>, String> fxmlFileMap = new HashMap<>();
 
 	private boolean saved = false;
@@ -38,6 +40,10 @@ public class Main extends Application {
 
 
 	public Main() {
+		Island defaultIsland = new Island("No Island",
+				"This is fictional island where everything is put which doesn't belong to an island",
+				null,0,null,null);
+		islandObservableList.add(defaultIsland);
 		fxmlFileMap.put(Yacht.class,"/view/Assets/YachtEdit.fxml");
 		fxmlFileMap.put(Island.class,"/view/Assets/IslandEdit.fxml");
 		fxmlFileMap.put(Plane.class,"/view/Assets/PlaneEdit.fxml");
@@ -50,8 +56,9 @@ public class Main extends Application {
 		SortedSet<Asset> island1Assets = new TreeSet<>();
 		island1Assets.add(plane1);
 		island1Assets.add(mansion1);
-
-		assetObservableList.add(new Island("Isla Grande", "Cool island tbh", new BigDecimal("2000000000"),new BigDecimal(1000000),99.9f,52.3269544f,4.9621217f, Island.Climate.TEMPERATE,island1Assets));
+		Island island1 = new Island("Isla Grande", "Cool island tbh", new BigDecimal("2000000000"),new BigDecimal(1000000),99.9f,52.3269544f,4.9621217f, Island.Climate.TEMPERATE,island1Assets);
+		islandObservableList.add(island1);
+		assetObservableList.add(island1);
 		Yacht yacht1 = new Yacht("Jan Žižka","Rest in peace",new BigDecimal("1000000"),new BigDecimal("20000000"),45.0d,3,80d,10);
 		assetObservableList.add(yacht1);
 

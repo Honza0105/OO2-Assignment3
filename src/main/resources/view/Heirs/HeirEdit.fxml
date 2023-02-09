@@ -83,7 +83,11 @@
             <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <TextField GridPane.columnIndex="3" />
             <Button mnemonicParsing="false" text="Remove Selected Asset" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" text="Create Asset" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" text="Create Asset" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Button>
          </children>
       </GridPane>
    </children>

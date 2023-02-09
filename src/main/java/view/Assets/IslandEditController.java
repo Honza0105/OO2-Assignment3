@@ -71,6 +71,7 @@ public class IslandEditController {
         descriptionField.setText(asset.getDescription());
         valueField.setText(asset.getValue().toString());
         rentPerWeekField.setText(asset.getRentPerWeek().toString());
+
         longitudeField.setText(String.valueOf(asset.getLongitude()));
         latitudeField.setText(String.valueOf(asset.getLatitude()));
         areaField.setText(String.valueOf(asset.getArea()));
