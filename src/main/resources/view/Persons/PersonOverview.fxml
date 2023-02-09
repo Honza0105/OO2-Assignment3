@@ -105,7 +105,7 @@
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin></Button>
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="159.0" text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                        <Button mnemonicParsing="false" onAction="#deleteHeir" prefHeight="32.0" prefWidth="159.0" text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="8">
                            <GridPane.margin>
                               <Insets left="152.0" />
                            </GridPane.margin></Button>

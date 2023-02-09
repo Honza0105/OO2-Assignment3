@@ -47,6 +47,7 @@ public class PersonOverviewController {
 
     private Main main;
 
+
     @FXML
     public void initialize() {
 
@@ -89,6 +90,11 @@ public class PersonOverviewController {
             netWorthLabel.setText("");
             incomeLabel.setText("");
         }
+    }
+
+    @FXML
+    public void deleteHeir(){
+        main.getHeirObservableList().remove(heirTableView.getSelectionModel().getSelectedItem());
     }
 
     public void setMain(Main main) {
