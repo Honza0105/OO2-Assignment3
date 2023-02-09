@@ -42,6 +42,7 @@ public class MansionEditController {
     public void setMain(Main main) {
         this.main = main;
         main.setSaved(false);
+        main.setEditScene(true);
     }
     public void initialize() {
 

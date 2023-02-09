@@ -48,6 +48,7 @@ public class PlaneEditController {
     public void setMain(Main main) {
         this.main = main;
         main.setSaved(false);
+        main.setEditScene(true);
     }
 
     public void setPlane(Plane asset) {

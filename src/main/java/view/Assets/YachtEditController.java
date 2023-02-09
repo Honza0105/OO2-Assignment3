@@ -57,6 +57,7 @@ public class YachtEditController {
     public void setMain(Main main) {
         this.main = main;
         main.setSaved(false);
+        main.setEditScene(true);
     }
 
     public void setYacht(Yacht asset) {
