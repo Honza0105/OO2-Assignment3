@@ -1,9 +1,8 @@
-package view.persons;
+package view.Heirs;
 
 import app.Main;
 import domain.Asset;
 import domain.Heir;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,7 +15,7 @@ import util.ProperFormats;
 
 import java.math.BigDecimal;
 
-public class PersonOverviewController {
+public class HeirOverviewController {
 
     @FXML
     private TableView<Heir> heirTableView;

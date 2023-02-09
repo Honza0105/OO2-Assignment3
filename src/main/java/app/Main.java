@@ -11,7 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import view.Assets.*;
 import view.RootLayoutController;
-import view.persons.PersonOverviewController;
+import view.Heirs.HeirOverviewController;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -130,12 +130,12 @@ public class Main extends Application {
 		setEditScene(false);
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader();
-			fxmlLoader.setLocation(Main.class.getResource("/view/Persons/PersonOverview.fxml"));
+			fxmlLoader.setLocation(Main.class.getResource("/view/Heirs/HeirOverview.fxml"));
 			System.out.println(fxmlLoader.getLocation());
 			AnchorPane personOverview = fxmlLoader.load();
 
 			rootLayout.setCenter(personOverview);
-			PersonOverviewController controller = fxmlLoader.getController();
+			HeirOverviewController controller = fxmlLoader.getController();
 			controller.setMain(this);
 		}
 		catch (IOException e){
