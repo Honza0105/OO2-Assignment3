@@ -1,10 +1,7 @@
 package view.Heirs;
 
 import app.Main;
-import domain.Asset;
-import domain.Heir;
-import domain.Island;
-import domain.Yacht;
+import domain.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -44,8 +41,12 @@ public class HeirEditController {
     @FXML
     private CheckBox removeSelectedAssetCheckBox;
 
+    @FXML
+    private ComboBox<String> assetsComboBox;
+
     private ObservableList<Heir.Gender> genders = FXCollections.observableArrayList(Heir.Gender.MALE, Heir.Gender.FEMALE, Heir.Gender.OTHER);
 
+    private ObservableList<String> assetsObservableList = FXCollections.observableArrayList("Yacht","Plane","Mansion","Island");
 
     private Main main;
 
@@ -70,6 +71,7 @@ public class HeirEditController {
         ObservableList<Asset> assets = FXCollections.observableArrayList(heir.getAssets());
         assetListView.setItems(assets);
         this.heir = heir;
+        assetsComboBox.setItems(assetsObservableList);
     }
 
     private boolean isInputValid() {
