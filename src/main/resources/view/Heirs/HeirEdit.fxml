@@ -38,6 +38,9 @@
                <font>
                   <Font size="28.0" />
                </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
             </Label>
             <Label text="Date of Birth" GridPane.rowIndex="1">
                <font>
@@ -48,6 +51,9 @@
                <font>
                   <Font size="28.0" />
                </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
             </Label>
             <Label text="Net worth" GridPane.rowIndex="2">
                <font>
@@ -58,6 +64,9 @@
                <font>
                   <Font size="28.0" />
                </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
             </Label>
             <Label text="Assets" GridPane.rowIndex="3">
                <font>
@@ -81,7 +90,10 @@
             <TextField fx:id="netWorthField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="incomeField" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <TextField fx:id="addressField" GridPane.columnIndex="3" />
-            <Button mnemonicParsing="false" text="Remove Selected Asset" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" text="Remove Selected Asset" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Button>
             <Button mnemonicParsing="false" text="Add asset" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="10.0" />
