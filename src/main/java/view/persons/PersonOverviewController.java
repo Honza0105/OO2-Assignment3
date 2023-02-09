@@ -70,8 +70,12 @@ public class PersonOverviewController {
             addressLabel.setText(heir.getAddress());
             dateOfBirthLabel.setText(DateUtil.format(heir.getDateOfBirth()));
             genderLabel.setText(heir.getGender().toString());
-            netWorthLabel.setText(heir.getNetWorth().toString());
-            incomeLabel.setText(heir.getIncome().toString());
+            BigDecimal netWorth = heir.getNetWorth();
+            String netWorthFormatted = ProperFormats.bigDecimalProperFormat(netWorth);
+            netWorthLabel.setText(netWorthFormatted);
+            BigDecimal income = heir.getIncome();
+            String incomeFormatted = ProperFormats.bigDecimalProperFormat(income);
+            incomeLabel.setText(incomeFormatted);
         }
         else {
             nameLabel.setText("");
