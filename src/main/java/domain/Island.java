@@ -177,6 +177,6 @@ public class Island extends Asset {
 				"being " + getArea() +
 				"km2 at coordinates " + getLongitude() + " " + getLatitude() +
 				", having climate:" + climate +
-				" and maybe assets" + assets;
+				" and assets: " + assets;
 	}
 }

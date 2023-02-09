@@ -4,6 +4,8 @@ import app.Main;
 import domain.Asset;
 import domain.Heir;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -75,6 +77,9 @@ public class PersonOverviewController {
             BigDecimal income = heir.getIncome();
             String incomeFormatted = ProperFormats.bigDecimalProperFormat(income);
             incomeLabel.setText(incomeFormatted);
+            ObservableList<Asset> assets = FXCollections.observableArrayList(heir.getAssets());
+            assetsListView.setItems(assets);
+
         }
         else {
             nameLabel.setText("");

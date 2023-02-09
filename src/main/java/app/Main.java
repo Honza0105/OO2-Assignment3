@@ -60,6 +60,9 @@ public class Main extends Application {
 		heirObservableList.add(john);
 		Heir sara = new Heir("Sara Zlota", "Poland Danzig 1", LocalDate.of(1999,1,3), Heir.Gender.FEMALE, new BigDecimal("200000000"), new BigDecimal("10000"));
 		heirObservableList.add(sara);
+		sara.addAsset(mansion1);
+		john.addAsset(plane1);
+		john.addAsset(assetObservableList.get(2));
 
 
 	}
