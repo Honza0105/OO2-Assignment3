@@ -42,20 +42,19 @@ public class PersonOverviewController {
     public void initialize() {
 
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-        typeColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(cellData.getValue().getClass().getSimpleName()));
 
-        showAssetDetails(null);
 
-        assetTable.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> showAssetDetails(newValue));
-        assetTable.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2){
-                //brings up a detail screen with all properties. The user can edit these properties and save them here.
-                Asset selectedAsset = assetTable.getSelectionModel().getSelectedItem();
-                System.out.println("Selected Asset: " + selectedAsset.getName());
-                main.showAssetEdit(selectedAsset);
-                System.out.println("huh?");
-            }
-        });
+//        showAssetDetails(null);
+
+//        assetTable.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> showAssetDetails(newValue));
+//        assetTable.setOnMouseClicked(event -> {
+//            if (event.getClickCount() == 2){
+//                brings up a detail screen with all properties. The user can edit these properties and save them here.
+//                Asset selectedAsset = assetTable.getSelectionModel().getSelectedItem();
+//                System.out.println("Selected Asset: " + selectedAsset.getName());
+//                main.showAssetEdit(selectedAsset);
+//                System.out.println("huh?");
+//            }
+//        });
     }
 }

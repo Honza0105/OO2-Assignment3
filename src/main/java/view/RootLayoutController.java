@@ -58,6 +58,31 @@ public class RootLayoutController {
 	}
 
 	@FXML
+	public void showHeirsMenuButton(){
+		if (main.isSaved()){
+			main.showHeirOverview();
+		}
+		else {
+			Alert alert = new Alert(Alert.AlertType.WARNING);
+			alert.initOwner(main.getStage());
+			alert.setTitle("File not saved");
+			alert.setHeaderText("Are you sure?");
+			alert.setContentText("If not saved, all changes will be lost.");
+			ButtonType buttonSaveBeforeExit = new ButtonType("I will save my data");
+			ButtonType buttonExitAnyways = new ButtonType("Exit anyways");
+
+			alert.getButtonTypes().setAll(buttonSaveBeforeExit, buttonExitAnyways);
+
+			Optional<ButtonType> result = alert.showAndWait();
+
+			if (result.get() == buttonExitAnyways) {
+				main.showAssetOverview();
+			}
+
+		}
+	}
+
+	@FXML
 	public void onHelp(){
 		//To be implemented
 	}

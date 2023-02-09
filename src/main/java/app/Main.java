@@ -78,7 +78,7 @@ public class Main extends Application {
 	public Stage getStage(){
 		return primaryStage;
 	}
-	
+
 	private void initRootLayout() {
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader();
@@ -109,6 +109,24 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+
+	public void showHeirOverview() {
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			fxmlLoader.setLocation(Main.class.getResource("/view/Persons/PersonOverview.fxml"));
+			System.out.println(fxmlLoader.getLocation());
+			AnchorPane personOverview = fxmlLoader.load();
+
+			rootLayout.setCenter(personOverview);
+			AssetOverviewController controller = fxmlLoader.getController();
+			controller.setMain(this);
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
+	}
+
+
 
 	public void showAssetEdit(Asset asset) {
 		String fxmlFile = fxmlFileMap.get(asset.getClass());
