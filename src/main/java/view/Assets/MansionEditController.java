@@ -31,17 +31,17 @@ public class MansionEditController {
 
     private Main main;
 
-    private boolean saved;
 
     private boolean pressedExit;
 
     private Mansion mansion;
 
-    public void initialize() {
-        saved = false;
-    }
     public void setMain(Main main) {
         this.main = main;
+        main.setSaved(false);
+    }
+    public void initialize() {
+
     }
 
     public void setMansion(Mansion asset) {
@@ -56,7 +56,7 @@ public class MansionEditController {
 
     @FXML
     public void exitEditDialog(){
-        if (saved){
+        if (main.isSaved()){
             main.showAssetOverview();
         }
         else {
@@ -92,7 +92,7 @@ public class MansionEditController {
             mansion.setRentPerWeek(new BigDecimal(rentPerWeekField.getText()));
             mansion.setAddress(addressField.getText());
 
-            saved = true;
+            main.setSaved(true);
         }
     }
 

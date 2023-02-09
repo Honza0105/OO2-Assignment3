@@ -45,7 +45,6 @@ public class IslandEditController {
 
     private Main main;
 
-    private boolean saved;
 
     private boolean pressedExit;
 
@@ -53,10 +52,10 @@ public class IslandEditController {
 
     public void setMain(Main main) {
         this.main = main;
+        main.setSaved(false);
     }
 
     public void initialize() {
-        saved = false;
     }
 
 
@@ -92,8 +91,7 @@ public class IslandEditController {
             island.setClimate(climateComboBox.getValue());
 
 
-
-            saved = true;
+            main.setSaved(true);
         }
     }
 
@@ -127,7 +125,7 @@ public class IslandEditController {
 
     @FXML
     public void exitEditDialog(){
-        if (saved){
+        if (main.isSaved()){
             main.showAssetOverview();
         }
         else {

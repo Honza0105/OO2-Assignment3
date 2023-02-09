@@ -29,6 +29,8 @@ public class Main extends Application {
 
 	private Map<Class<? extends Asset>, String> fxmlFileMap = new HashMap<>();
 
+	private boolean saved = false;
+
 
 
 	public Main() {
@@ -144,7 +146,15 @@ public class Main extends Application {
 		}
 
 	}
-	
+
+	public boolean isSaved() {
+		return saved;
+	}
+
+	public void setSaved(boolean saved) {
+		this.saved = saved;
+	}
+
 	public static void main(String[] args) {
 		launch(args);
 	}

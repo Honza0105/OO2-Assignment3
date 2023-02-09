@@ -46,12 +46,13 @@ public class YachtEditController {
     private Yacht yacht;
 
     public void initialize() {
-        saved = false;
+
     }
 
 
     public void setMain(Main main) {
         this.main = main;
+        main.setSaved(false);
     }
 
     public void setYacht(Yacht asset) {
@@ -69,7 +70,7 @@ public class YachtEditController {
 
     @FXML
     public void exitEditDialog(){
-        if (saved){
+        if (main.isSaved()){
             main.showAssetOverview();
         }
         else {
@@ -108,7 +109,7 @@ public class YachtEditController {
             yacht.setHuts(Integer.parseInt(hutsField.getText()));
             yacht.setLength(Double.parseDouble(lengthField.getText()));
 
-            saved = true;
+            main.setSaved(true);
         }
     }
     private boolean isInputValid() {

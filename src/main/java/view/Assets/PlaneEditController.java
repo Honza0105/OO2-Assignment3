@@ -30,24 +30,20 @@ public class PlaneEditController {
     @FXML
     private TextField numberOfPassengersField;
 
-    private boolean saved;
-
     private boolean pressedExit;
 
     private Plane plane;
 
 
-    @FXML
-    public void initilize(){
-    }
 
     private Main main;
 
     public void initialize() {
-        saved = false;
+
     }
     public void setMain(Main main) {
         this.main = main;
+        main.setSaved(false);
     }
 
     public void setPlane(Plane asset) {
@@ -63,7 +59,7 @@ public class PlaneEditController {
 
     @FXML
     public void exitEditDialog(){
-        if (saved){
+        if (main.isSaved()){
             main.showAssetOverview();
         }
         else {
@@ -100,7 +96,7 @@ public class PlaneEditController {
             plane.setMaxAltitude(Integer.parseInt(maxAltitudeField.getText()));
             plane.setNumberOfPassengers(Integer.parseInt(numberOfPassengersField.getText()));
 
-            saved = true;
+            main.setSaved(true);
         }
     }
 
