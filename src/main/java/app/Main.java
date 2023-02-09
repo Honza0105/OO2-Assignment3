@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import view.Assets.*;
+import view.Heirs.HeirEditController;
 import view.RootLayoutController;
 import view.Heirs.HeirOverviewController;
 
@@ -135,9 +136,9 @@ public class Main extends Application {
 			FXMLLoader fxmlLoader = new FXMLLoader();
 			fxmlLoader.setLocation(Main.class.getResource("/view/Heirs/HeirOverview.fxml"));
 			System.out.println(fxmlLoader.getLocation());
-			AnchorPane personOverview = fxmlLoader.load();
+			AnchorPane heirOverview = fxmlLoader.load();
 
-			rootLayout.setCenter(personOverview);
+			rootLayout.setCenter(heirOverview);
 			HeirOverviewController controller = fxmlLoader.getController();
 			controller.setMain(this);
 		}
@@ -147,6 +148,22 @@ public class Main extends Application {
 	}
 
 
+	public void showHeirEdit(Heir heir) {
+		setEditScene(false);
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			fxmlLoader.setLocation(Main.class.getResource("/view/Heirs/HeirEdit.fxml"));
+			System.out.println(fxmlLoader.getLocation());
+			AnchorPane heirEdit = fxmlLoader.load();
+
+			rootLayout.setCenter(heirEdit);
+			HeirEditController controller = fxmlLoader.getController();
+			controller.setMain(this);
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
+	}
 
 	public void showAssetEdit(Asset asset) {
 		String fxmlFile = fxmlFileMap.get(asset.getClass());

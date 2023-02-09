@@ -60,8 +60,8 @@ public class HeirOverviewController {
             if (event.getClickCount() == 2){
                 //brings up a detail screen with all properties. The user can edit these properties and save them here.
                 Heir selectedHeir = heirTableView.getSelectionModel().getSelectedItem();
-                System.out.println("Selected Heir: " + selectedHeir.getName());
-//                main.showAssetEdit(selectedHeir);
+//                System.out.println("Selected Heir: " + selectedHeir.getName());
+                main.showHeirEdit(selectedHeir);
             }
         });
     }
