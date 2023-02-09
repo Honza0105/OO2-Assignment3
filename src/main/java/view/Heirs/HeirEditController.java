@@ -14,6 +14,7 @@ import util.DateUtil;
 import util.ProperFormats;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 public class HeirEditController {
     @FXML
@@ -127,6 +128,35 @@ public class HeirEditController {
 
 
             main.setSaved(true);
+        }
+    }
+
+    @FXML
+    public void exitEditDialog(){
+        if (main.isSaved()){
+            main.showAssetOverview();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(main.getStage());
+            alert.setTitle("File not saved");
+            alert.setHeaderText("Are you sure?");
+            alert.setContentText("If not saved, all changes will be lost.");
+            ButtonType buttonSaveBeforeExit = new ButtonType("Save before exit");
+            ButtonType buttonExitAnyways = new ButtonType("Exit anyways");
+
+            alert.getButtonTypes().setAll(buttonSaveBeforeExit, buttonExitAnyways);
+
+            Optional<ButtonType> result = alert.showAndWait();
+
+            if (result.get() == buttonSaveBeforeExit) {
+                pressedExit = true;
+                saveEditDialog();
+                main.showHeirOverview();
+            } else if (result.get() == buttonExitAnyways) {
+                main.showHeirOverview();
+            }
+
         }
     }
 
