@@ -101,7 +101,11 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <CheckBox fx:id="removeSelectedAssetCheckBox" mnemonicParsing="false" text="Remove Selected Asset" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <CheckBox fx:id="removeSelectedAssetCheckBox" mnemonicParsing="false" text="Remove Selected Asset" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </CheckBox>
          </children>
       </GridPane>
    </children>
