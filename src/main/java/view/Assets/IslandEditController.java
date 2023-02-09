@@ -1,14 +1,12 @@
 package view.Assets;
 
 import app.Main;
+import domain.Asset;
 import domain.Island;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import util.ProperFormats;
 
 import java.math.BigDecimal;
@@ -39,6 +37,9 @@ public class IslandEditController {
 
     @FXML
     private ComboBox<Island.Climate> climateComboBox;
+
+    @FXML
+    private ListView<Asset> assetsListView;
 
     private ObservableList<Island.Climate> climates = FXCollections.observableArrayList(Island.Climate.TROPICAL, Island.Climate.SUBTROPICAL, Island.Climate.TEMPERATE, Island.Climate.CONTINENTAL, Island.Climate.ARCTIC);
 

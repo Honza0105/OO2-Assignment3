@@ -37,6 +37,9 @@ public class MansionEditController {
 
     private Mansion mansion;
 
+    public void initialize() {
+        saved = false;
+    }
     public void setMain(Main main) {
         this.main = main;
     }

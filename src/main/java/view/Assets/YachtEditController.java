@@ -45,8 +45,8 @@ public class YachtEditController {
 
     private Yacht yacht;
 
-    @FXML
-    public void initilize(){
+    public void initialize() {
+        saved = false;
     }
 
 

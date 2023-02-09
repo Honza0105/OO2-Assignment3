@@ -43,8 +43,9 @@ public class PlaneEditController {
 
     private Main main;
 
-    public void initialize(){};
-
+    public void initialize() {
+        saved = false;
+    }
     public void setMain(Main main) {
         this.main = main;
     }
