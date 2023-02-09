@@ -58,6 +58,9 @@ public class Main extends Application {
 		//sample Heir data
 		Heir john = new Heir("John Johnson", "Amsterdam Noord 12", LocalDate.of(1970,11,11), Heir.Gender.MALE,new BigDecimal("10000000"),new BigDecimal("150000"));
 		heirObservableList.add(john);
+		Heir sara = new Heir("Sara Zlota", "Poland Danzig 1", LocalDate.of(1999,1,3), Heir.Gender.FEMALE, new BigDecimal("200000000"), new BigDecimal("10000"));
+		heirObservableList.add(sara);
+
 
 	}
 
