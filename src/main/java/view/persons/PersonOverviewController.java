@@ -54,15 +54,14 @@ public class PersonOverviewController {
         showHeirDetails(null);
 
         heirTableView.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> showHeirDetails(newValue));
-//        heirTableView.setOnMouseClicked(event -> {
-//            if (event.getClickCount() == 2){
-//                brings up a detail screen with all properties. The user can edit these properties and save them here.
-//                Heir selectedHeir = heirTableView.getSelectionModel().getSelectedItem();
-//                System.out.println("Selected Asset: " + selectedAsset.getName());
-//                main.showAssetEdit(selectedAsset);
-//                System.out.println("huh?");
-//            }
-//        });
+        heirTableView.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2){
+                //brings up a detail screen with all properties. The user can edit these properties and save them here.
+                Heir selectedHeir = heirTableView.getSelectionModel().getSelectedItem();
+                System.out.println("Selected Heir: " + selectedHeir.getName());
+//                main.showAssetEdit(selectedHeir);
+            }
+        });
     }
     private void showHeirDetails(Heir heir){
         if (heir != null){
