@@ -25,4 +25,10 @@ public class RootLayoutController {
 	public void onAbout() {
 		
 	}
+
+	@FXML
+	public void showAssetsMenuButton(){
+
+		main.showAssetOverview();
+	}
 }
