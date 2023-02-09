@@ -2,6 +2,8 @@ package domain;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -18,7 +20,7 @@ public class Heir {
 	private BigDecimal income;
 	private final BigInteger id;
 	private static BigInteger currentId = BigInteger.valueOf(2);
-	private final Set<Asset> assets;
+	private final ObservableList<Asset> assets;
 
 
 
@@ -33,7 +35,7 @@ public class Heir {
 		this.gender = gender;
 		this.netWorth = netWorth;
 		this.income = income;
-		this.assets = new TreeSet<>();
+		this.assets = FXCollections.observableArrayList();
 	}
 
 	public String getName() {

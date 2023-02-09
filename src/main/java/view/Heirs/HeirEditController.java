@@ -8,11 +8,12 @@ import domain.Yacht;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import org.w3c.dom.Text;
 import util.DateUtil;
+import util.ProperFormats;
+
+import java.math.BigDecimal;
 
 public class HeirEditController {
     @FXML
@@ -35,6 +36,12 @@ public class HeirEditController {
 
     @FXML
     private TextField incomeField;
+
+    @FXML
+    private Label savedLabel;
+
+    @FXML
+    private CheckBox removeSelectedAssetCheckBox;
 
     private ObservableList<Heir.Gender> genders = FXCollections.observableArrayList(Heir.Gender.MALE, Heir.Gender.FEMALE, Heir.Gender.OTHER);
 
@@ -62,6 +69,65 @@ public class HeirEditController {
         ObservableList<Asset> assets = FXCollections.observableArrayList(heir.getAssets());
         assetListView.setItems(assets);
         this.heir = heir;
+    }
+
+    private boolean isInputValid() {
+        String alertMessage = "";
+
+        if (nameField.getText() == null || nameField.getText().length() == 0) {
+            alertMessage += "Not a valid name!\n";
+        }
+        if (addressField.getText() == null || addressField.getText().length() == 0) {
+            alertMessage += "Not a valid address!\n";
+        }
+        if (!DateUtil.validDate(dateOfBirthField.getText())){
+            alertMessage += "Not a valid date!\n";
+        }
+
+        if (!ProperFormats.positiveDecimalFormat(netWorthField.getText())){
+            alertMessage += "Net worth can only contain positive decimals!\n";
+        }
+        if (!ProperFormats.positiveDecimalFormat(incomeField.getText())){
+            alertMessage += "Income can only contain positive decimals!\n";
+        }
+
+        if (alertMessage.length()==0 || pressedExit){
+            return true;
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(main.getStage());
+            alert.setTitle("Invalid Fields");
+            alert.setHeaderText("Please correct invalid fields");
+            alert.setContentText(alertMessage);
+            alert.showAndWait();
+
+            return false;
+        }
+    }
+
+    @FXML
+    public void saveEditDialog(){
+        if (isInputValid()){
+            heir.setName(nameField.getText());
+            heir.setAddress(addressField.getText());
+            heir.setDateOfBirth(DateUtil.parse(dateOfBirthField.getText()));
+            heir.setGender(genderComboBox.getValue());
+            heir.setNetWorth(new BigDecimal(netWorthField.getText()));
+            heir.setIncome(new BigDecimal(incomeField.getText()));
+            if (removeSelectedAssetCheckBox.isSelected()){
+                Asset selectedAsset = assetListView.getSelectionModel().getSelectedItem();
+                heir.removeAsset(selectedAsset);
+            }
+
+
+
+
+            savedLabel.setVisible(true);
+
+
+            main.setSaved(true);
+        }
     }
 
 
