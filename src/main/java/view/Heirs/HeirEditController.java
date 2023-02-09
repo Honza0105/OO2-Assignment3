@@ -134,7 +134,7 @@ public class HeirEditController {
     @FXML
     public void exitEditDialog(){
         if (main.isSaved()){
-            main.showAssetOverview();
+            main.showHeirOverview();
         }
         else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
