@@ -21,6 +21,11 @@ public class Plane extends Asset {
 		this.numberOfPassengers = new SimpleIntegerProperty(numberOfPassengers);
 	}
 
+	@Override
+	public String toString() {
+		return "Plane: " + getName() + ", described as, " + getDescription() + ", with maximum altitude "+ getMaxAltitude()+" m and " + getNumberOfPassengers()+ " passengers";
+	}
+
 	public int getMaxAltitude() {
 		return maxAltitude.get();
 	}

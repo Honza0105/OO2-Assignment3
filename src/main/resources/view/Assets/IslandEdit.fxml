@@ -107,7 +107,7 @@
                         <Insets left="10.0" />
                     </GridPane.margin>
                 </Label>
-                <ListView prefHeight="200.0" prefWidth="118.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                <ListView fx:id="assetsListView" prefHeight="200.0" prefWidth="118.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
                     <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="10.0" />
                     </GridPane.margin>

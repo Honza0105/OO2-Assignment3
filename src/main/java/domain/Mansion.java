@@ -19,6 +19,7 @@ public class Mansion extends Asset {
 		System.out.println(address);
 		this.address = new SimpleStringProperty(address);
 	}
+
 	
 	public String getAddress() {
 		return address.get();
@@ -30,7 +31,6 @@ public class Mansion extends Asset {
 	
 	@Override
 	public String toString() {
-		return "Mansion [address=" + address + ", getName()=" + getName() + ", getDescription()=" + getDescription()
-				+ ", getId()=" + getId() + "]";
+		return "Mansion: " + getName() + ",  " + getAddress() + ", described as, " + getDescription();
 	}
 }

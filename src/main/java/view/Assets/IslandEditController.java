@@ -73,6 +73,9 @@ public class IslandEditController {
         areaField.setText(String.valueOf(asset.getArea()));
         climateComboBox.setItems(climates);
         climateComboBox.setValue(asset.getClimate());
+        ObservableList<Asset> assets = FXCollections.observableArrayList(asset.getAssets());
+        assetsListView.setItems(assets);
+
         this.island = asset;
     }
 
