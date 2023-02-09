@@ -56,4 +56,9 @@ public class RootLayoutController {
 
 		}
 	}
+
+	@FXML
+	public void onHelp(){
+		//To be implemented
+	}
 }

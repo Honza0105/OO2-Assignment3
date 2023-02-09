@@ -40,7 +40,7 @@
                 <MenuItem mnemonicParsing="false" text="Action 1" />
               </items>
             </Menu>
-            <Menu disable="true" mnemonicParsing="false" text="Help" visible="false">
+            <Menu disable="true" mnemonicParsing="false" onAction="#onHelp" text="Help" visible="false">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
               </items>
