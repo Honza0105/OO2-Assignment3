@@ -1,12 +1,10 @@
 package view.Assets;
 
 import app.Main;
+import domain.Island;
 import domain.Mansion;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import util.ProperFormats;
 
 import java.math.BigDecimal;
@@ -32,6 +30,12 @@ public class MansionEditController {
     @FXML
     private Label savedLabel;
 
+    @FXML
+    private ComboBox<Island> islandComboBox;
+
+    @FXML
+    private CheckBox removeIslandCheckBox;
+
     private Main main;
 
 
@@ -54,6 +58,8 @@ public class MansionEditController {
         valueField.setText(asset.getValue().toString());
         rentPerWeekField.setText(String.valueOf(asset.getRentPerWeek()));
         addressField.setText(asset.getAddress());
+        islandComboBox.setItems(main.getIslandObservableList());
+        islandComboBox.setValue(asset.getHomeIsland());
 
         this.mansion = asset;
     }
@@ -98,6 +104,13 @@ public class MansionEditController {
 
             savedLabel.setVisible(true);
 
+            if (removeIslandCheckBox.isSelected()){
+                removeFromIsland();
+            }
+            else{
+                mansion.setHomeIsland(islandComboBox.getValue());
+            }
+
 
             main.setSaved(true);
         }
@@ -124,5 +137,8 @@ public class MansionEditController {
 
             return false;
         }
+    }
+    public void removeFromIsland(){
+        mansion.setHomeIsland(null);
     }
 }

@@ -8,6 +8,9 @@ import java.math.BigDecimal;
 public class Mansion extends Asset {
 	private StringProperty address;
 
+	private Island homeIsland;
+
+
 	public Mansion(String name, String description, String address, BigDecimal value, BigDecimal rentPerWeek) {
 		super(name, description, value, rentPerWeek);
 		System.out.println(address);
@@ -32,5 +35,13 @@ public class Mansion extends Asset {
 	@Override
 	public String toString() {
 		return "Mansion: " + getName() + ",  " + getAddress() + ", described as, " + getDescription();
+	}
+
+	public Island getHomeIsland() {
+		return homeIsland;
+	}
+
+	public void setHomeIsland(Island homeIsland) {
+		this.homeIsland = homeIsland;
 	}
 }

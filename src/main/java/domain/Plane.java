@@ -8,6 +8,8 @@ import java.math.BigDecimal;
 public class Plane extends Asset {
 	private IntegerProperty maxAltitude;
 	private IntegerProperty numberOfPassengers;
+	private Island homeIsland;
+
 
 	public Plane(String name, String description, BigDecimal value, BigDecimal rentPerWeek, int maxAltitude, int numberOfPassengers) {
 		super(name, description, value, rentPerWeek);
@@ -40,5 +42,13 @@ public class Plane extends Asset {
 
 	public void setNumberOfPassengers(int numberOfPassengers) {
 		this.numberOfPassengers.set(numberOfPassengers);
+	}
+
+	public Island getHomeIsland() {
+		return homeIsland;
+	}
+
+	public void setHomeIsland(Island homeIsland) {
+		this.homeIsland = homeIsland;
 	}
 }

@@ -1,12 +1,10 @@
 package view.Assets;
 
 import app.Main;
+import domain.Island;
 import domain.Plane;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import util.ProperFormats;
 
 import java.math.BigDecimal;
@@ -34,6 +32,12 @@ public class PlaneEditController {
     @FXML
     private Label savedLabel;
 
+    @FXML
+    private ComboBox<Island> islandComboBox;
+
+    @FXML
+    private CheckBox removeIslandCheckBox;
+
     private boolean pressedExit;
 
     private Plane plane;
@@ -58,6 +62,8 @@ public class PlaneEditController {
         rentPerWeekField.setText(asset.getRentPerWeek().toString());
         maxAltitudeField.setText(String.valueOf(asset.getMaxAltitude()));
         numberOfPassengersField.setText(String.valueOf(asset.getNumberOfPassengers()));
+        islandComboBox.setItems(main.getIslandObservableList());
+        islandComboBox.setValue(asset.getHomeIsland());
 
         this.plane = asset;
     }
@@ -101,6 +107,12 @@ public class PlaneEditController {
             plane.setMaxAltitude(Integer.parseInt(maxAltitudeField.getText()));
             plane.setNumberOfPassengers(Integer.parseInt(numberOfPassengersField.getText()));
             savedLabel.setVisible(true);
+            if (removeIslandCheckBox.isSelected()){
+                removeFromIsland();
+            }
+            else{
+                plane.setHomeIsland(islandComboBox.getValue());
+            }
 
 
             main.setSaved(true);
@@ -131,5 +143,8 @@ public class PlaneEditController {
 
             return false;
         }
+    }
+    public void removeFromIsland(){
+        plane.setHomeIsland(null);
     }
 }
