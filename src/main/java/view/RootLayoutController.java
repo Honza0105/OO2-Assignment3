@@ -34,7 +34,7 @@ public class RootLayoutController {
 	@FXML
 	public void showAssetsMenuButton(){
 
-		if (main.isSaved()){
+		if (main.isSaved() || !main.isEditScene()){
 			main.showAssetOverview();
 		}
 		else {
@@ -76,7 +76,7 @@ public class RootLayoutController {
 			Optional<ButtonType> result = alert.showAndWait();
 
 			if (result.get() == buttonExitAnyways) {
-				main.showAssetOverview();
+				main.showHeirOverview();
 			}
 
 		}

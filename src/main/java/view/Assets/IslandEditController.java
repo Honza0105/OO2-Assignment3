@@ -56,6 +56,7 @@ public class IslandEditController {
     public void setMain(Main main) {
         this.main = main;
         main.setSaved(false);
+        main.setEditScene(true);
     }
 
     public void initialize() {

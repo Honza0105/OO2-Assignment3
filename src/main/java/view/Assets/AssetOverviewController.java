@@ -88,6 +88,7 @@ public class AssetOverviewController {
     public void setMain(Main main) {
         this.main = main;
 
+
         assetTable.setItems(main.getAssetObservableList());
     }
 }

@@ -31,6 +31,8 @@ public class Main extends Application {
 
 	private boolean saved = false;
 
+	private boolean editScene = false;
+
 
 
 	public Main() {
@@ -95,6 +97,7 @@ public class Main extends Application {
 	}
 
 	public void showAssetOverview() {
+		setEditScene(false);
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader();
 			fxmlLoader.setLocation(Main.class.getResource("/view/Assets/AssetOverview.fxml"));
@@ -111,6 +114,7 @@ public class Main extends Application {
 	}
 
 	public void showHeirOverview() {
+		setEditScene(false);
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader();
 			fxmlLoader.setLocation(Main.class.getResource("/view/Persons/PersonOverview.fxml"));
@@ -171,6 +175,14 @@ public class Main extends Application {
 
 	public void setSaved(boolean saved) {
 		this.saved = saved;
+	}
+
+	public boolean isEditScene() {
+		return editScene;
+	}
+
+	public void setEditScene(boolean editScene) {
+		this.editScene = editScene;
 	}
 
 	public static void main(String[] args) {
