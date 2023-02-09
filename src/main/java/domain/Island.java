@@ -170,4 +170,13 @@ public class Island extends Asset {
 			this.longitude = longitude;
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Island: "+
+				"being " + getArea() +
+				"km2 at coordinates " + getLongitude() + " " + getLatitude() +
+				", having climate:" + climate +
+				" and maybe assets" + assets;
+	}
 }

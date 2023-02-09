@@ -59,4 +59,14 @@ public class Yacht extends Asset {
 	public void setHuts(int huts) {
 		this.huts.set(huts);
 	}
+
+	@Override
+	public String toString() {
+		return "Yacht:" +
+				"being " + length +
+				"m long, having " + numberOfDecks +
+				"deck/s, its maximum speed is " + speed +
+				"km/h, and it has " + huts +
+				"hut/s";
+	}
 }
