@@ -62,6 +62,7 @@ public class HeirOverviewController {
                 Heir selectedHeir = heirTableView.getSelectionModel().getSelectedItem();
 //                System.out.println("Selected Heir: " + selectedHeir.getName());
                 main.showHeirEdit(selectedHeir);
+
             }
         });
     }

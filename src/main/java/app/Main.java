@@ -159,6 +159,7 @@ public class Main extends Application {
 			rootLayout.setCenter(heirEdit);
 			HeirEditController controller = fxmlLoader.getController();
 			controller.setMain(this);
+			controller.setHeir(heir);
 		}
 		catch (IOException e){
 			e.printStackTrace();
