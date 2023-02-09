@@ -48,19 +48,58 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Name" GridPane.rowIndex="1" />
-                        <Label text="Address" GridPane.rowIndex="2" />
-                        <Label text="Date of Birth" GridPane.rowIndex="3" />
-                        <Label text="Gender" GridPane.rowIndex="4" />
-                        <Label text="Net worth" GridPane.rowIndex="5" />
-                        <Label text="Income" GridPane.rowIndex="6" />
-                        <Label text="Assets" GridPane.rowIndex="7" />
-                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label fx:id="addressLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="dateOfBirthLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="genderLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label fx:id="netWorthLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Label fx:id="incomeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text="Name" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label text="Address" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label text="Date of Birth" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label text="Gender" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label text="Net worth" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label text="Income" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label text="Assets" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label fx:id="addressLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label fx:id="dateOfBirthLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label fx:id="genderLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label fx:id="netWorthLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <Label fx:id="incomeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
                         <ListView fx:id="assetsListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                       <Button mnemonicParsing="false" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="8">
                            <GridPane.margin>
