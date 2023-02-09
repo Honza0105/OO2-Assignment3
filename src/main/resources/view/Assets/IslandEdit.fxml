@@ -162,6 +162,16 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
+            <Label text="Add Assets:" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets top="-42.0" />
+               </GridPane.margin>
+            </Label>
+            <ComboBox prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ComboBox>
             </children>
         </GridPane>
     </children>
