@@ -84,7 +84,7 @@
                     <buttons>
                         <Button mnemonicParsing="false" onAction="#saveEditDialog" text="Save" />
                         <Button mnemonicParsing="false" onAction="#exitEditDialog" text="Exit" />
-                        <Label minWidth="38.0" prefHeight="16.0" text="Saved" textFill="#ff3a3a" visible="false" />
+                        <Label fx:id="savedLabel" minWidth="38.0" prefHeight="16.0" text="Saved" textFill="#1f9e45" visible="false" />
                     </buttons>
                     <padding>
                         <Insets right="15.0" />

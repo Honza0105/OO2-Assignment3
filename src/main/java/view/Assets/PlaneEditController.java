@@ -5,6 +5,7 @@ import domain.Plane;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import util.ProperFormats;
 
@@ -29,6 +30,9 @@ public class PlaneEditController {
 
     @FXML
     private TextField numberOfPassengersField;
+
+    @FXML
+    private Label savedLabel;
 
     private boolean pressedExit;
 
@@ -95,6 +99,8 @@ public class PlaneEditController {
             plane.setRentPerWeek(new BigDecimal(rentPerWeekField.getText()));
             plane.setMaxAltitude(Integer.parseInt(maxAltitudeField.getText()));
             plane.setNumberOfPassengers(Integer.parseInt(numberOfPassengersField.getText()));
+            savedLabel.setVisible(true);
+
 
             main.setSaved(true);
         }

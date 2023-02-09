@@ -5,6 +5,7 @@ import domain.Yacht;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import util.ProperFormats;
 
@@ -36,6 +37,9 @@ public class YachtEditController {
 
     @FXML
     private TextField lengthField;
+
+    @FXML
+    private Label savedLabel;
 
     private Main main;
 
@@ -108,6 +112,8 @@ public class YachtEditController {
             yacht.setSpeed(Double.parseDouble(speedField.getText()));
             yacht.setHuts(Integer.parseInt(hutsField.getText()));
             yacht.setLength(Double.parseDouble(lengthField.getText()));
+            savedLabel.setVisible(true);
+
 
             main.setSaved(true);
         }

@@ -29,6 +29,9 @@ public class MansionEditController {
     @FXML
     private TextField addressField;
 
+    @FXML
+    private Label savedLabel;
+
     private Main main;
 
 
@@ -91,6 +94,9 @@ public class MansionEditController {
             mansion.setValue(new BigDecimal(valueField.getText()));
             mansion.setRentPerWeek(new BigDecimal(rentPerWeekField.getText()));
             mansion.setAddress(addressField.getText());
+
+            savedLabel.setVisible(true);
+
 
             main.setSaved(true);
         }

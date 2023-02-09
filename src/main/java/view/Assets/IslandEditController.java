@@ -41,6 +41,9 @@ public class IslandEditController {
     @FXML
     private ListView<Asset> assetsListView;
 
+    @FXML
+    private Label savedLabel;
+
     private ObservableList<Island.Climate> climates = FXCollections.observableArrayList(Island.Climate.TROPICAL, Island.Climate.SUBTROPICAL, Island.Climate.TEMPERATE, Island.Climate.CONTINENTAL, Island.Climate.ARCTIC);
 
     private Main main;
@@ -89,6 +92,8 @@ public class IslandEditController {
             island.setLatitude(Float.parseFloat(latitudeField.getText()));
             island.setArea(Float.parseFloat(areaField.getText()));
             island.setClimate(climateComboBox.getValue());
+
+            savedLabel.setVisible(true);
 
 
             main.setSaved(true);
