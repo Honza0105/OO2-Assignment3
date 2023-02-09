@@ -9,6 +9,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import util.DateUtil;
+import util.ProperFormats;
+
+import java.math.BigDecimal;
 
 public class PersonOverviewController {
 
@@ -47,18 +51,36 @@ public class PersonOverviewController {
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
 
 
-//        showAssetDetails(null);
+        showHeirDetails(null);
 
-//        assetTable.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> showAssetDetails(newValue));
-//        assetTable.setOnMouseClicked(event -> {
+        heirTableView.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> showHeirDetails(newValue));
+//        heirTableView.setOnMouseClicked(event -> {
 //            if (event.getClickCount() == 2){
 //                brings up a detail screen with all properties. The user can edit these properties and save them here.
-//                Asset selectedAsset = assetTable.getSelectionModel().getSelectedItem();
+//                Heir selectedHeir = heirTableView.getSelectionModel().getSelectedItem();
 //                System.out.println("Selected Asset: " + selectedAsset.getName());
 //                main.showAssetEdit(selectedAsset);
 //                System.out.println("huh?");
 //            }
 //        });
+    }
+    private void showHeirDetails(Heir heir){
+        if (heir != null){
+            nameLabel.setText(heir.getName());
+            addressLabel.setText(heir.getAddress());
+            dateOfBirthLabel.setText(DateUtil.format(heir.getDateOfBirth()));
+            genderLabel.setText(heir.getGender().toString());
+            netWorthLabel.setText(heir.getNetWorth().toString());
+            incomeLabel.setText(heir.getIncome().toString());
+        }
+        else {
+            nameLabel.setText("");
+            addressLabel.setText("");
+            dateOfBirthLabel.setText("");
+            genderLabel.setText("");
+            netWorthLabel.setText("");
+            incomeLabel.setText("");
+        }
     }
 
     public void setMain(Main main) {
