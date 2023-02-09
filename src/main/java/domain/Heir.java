@@ -1,5 +1,7 @@
 package domain;
 
+import javafx.beans.property.StringProperty;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.LocalDate;
@@ -7,8 +9,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Heir {
-	private String name;
-	private String address;
+	private StringProperty name;
+	private StringProperty address;
 	private LocalDate dateOfBirth;
 	private Gender gender;
 	private BigDecimal netWorth;
@@ -16,9 +18,11 @@ public class Heir {
 	private final BigInteger id;
 	private static BigInteger currentId = BigInteger.valueOf(2);
 	private final Set<Asset> assets;
-	
-	public Heir(String name, String address, LocalDate dateOfBirth, Gender gender, BigDecimal netWorth,
-			BigDecimal income) {
+
+
+
+	public Heir(StringProperty name, StringProperty address, LocalDate dateOfBirth, Gender gender, BigDecimal netWorth,
+				BigDecimal income) {
 		super();
 		this.id = currentId;
 		currentId = currentId.nextProbablePrime();
@@ -32,19 +36,27 @@ public class Heir {
 	}
 
 	public String getName() {
+		return name.get();
+	}
+
+	public StringProperty nameProperty() {
 		return name;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.name.set(name);
 	}
 
 	public String getAddress() {
+		return address.get();
+	}
+
+	public StringProperty addressProperty() {
 		return address;
 	}
 
 	public void setAddress(String address) {
-		this.address = address;
+		this.address.set(address);
 	}
 
 	public LocalDate getDateOfBirth() {
