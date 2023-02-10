@@ -11,6 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import view.Assets.*;
 import view.Heirs.HeirEditController;
+import view.Heirs.YachtCreateController;
 import view.RootLayoutController;
 import view.Heirs.HeirOverviewController;
 
@@ -202,6 +203,27 @@ public class Main extends Application {
 		}
 
 	}
+
+	public void showAssetCreate(String type, Heir heir) {
+		setEditScene(true);
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			fxmlLoader.setLocation(Main.class.getResource("/view/Heirs/YachtCreate.fxml"));
+			System.out.println(fxmlLoader.getLocation());
+			AnchorPane heirEdit = fxmlLoader.load();
+
+			rootLayout.setCenter(heirEdit);
+			YachtCreateController controller = fxmlLoader.getController();
+			controller.setMain(this);
+			controller.setYacht(heir);
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
+	}
+
+
+
 
 	public boolean isSaved() {
 		return saved;

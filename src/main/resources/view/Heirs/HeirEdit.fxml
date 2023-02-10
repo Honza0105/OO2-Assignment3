@@ -75,12 +75,12 @@
                </font>
             </Label>
             <ListView fx:id="assetListView" prefHeight="200.0" prefWidth="386.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#saveEditDialog" prefHeight="33.0" prefWidth="127.0" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <Button mnemonicParsing="false" onAction="#saveEditDialog" prefHeight="33.0" prefWidth="127.0" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#exitEditDialog" prefHeight="32.0" prefWidth="126.0" text="Exit" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <Button mnemonicParsing="false" onAction="#exitEditDialog" prefHeight="32.0" prefWidth="126.0" text="Exit" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="9.0" />
                </GridPane.margin>
@@ -91,11 +91,6 @@
             <TextField fx:id="netWorthField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="incomeField" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <TextField fx:id="addressField" GridPane.columnIndex="3" />
-            <Button mnemonicParsing="false" text="Add selected Asset" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Button>
             <Label fx:id="savedLabel" text="Saved" textFill="#1f9e45" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="10.0" />
@@ -106,7 +101,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </CheckBox>
-            <ComboBox fx:id="assetsComboBox" prefWidth="150.0" promptText="Assets options" GridPane.rowIndex="4" />
+            <ComboBox fx:id="assetsComboBox" onAction="#handleCreateNewAsset" prefWidth="150.0" promptText="Choose asset to be created" GridPane.columnIndex="3" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>

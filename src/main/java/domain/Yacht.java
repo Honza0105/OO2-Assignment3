@@ -72,11 +72,6 @@ public class Yacht extends Asset {
 
 	@Override
 	public String toString() {
-		return "Yacht:" +
-				"being " + length +
-				"m long, having " + numberOfDecks +
-				"deck/s, its maximum speed is " + speed +
-				"km/h, and it has " + huts +
-				"hut/s";
+		return "Yacht " + getName();
 	}
 }

@@ -4,6 +4,7 @@ import javafx.scene.control.TextField;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class ProperFormats {
@@ -51,7 +52,7 @@ public class ProperFormats {
             alertMessage += "Value can only contain decimals!\n";
         }
 
-        if (!positiveDecimal.matcher(rentPerWeekField.getText()).find()){
+        if (!positiveDecimal.matcher(rentPerWeekField.getText()).find() && !Objects.equals(rentPerWeekField.getText(), "")){
             alertMessage += "Rent per week can only contain decimals!\n";
         }
         return alertMessage;

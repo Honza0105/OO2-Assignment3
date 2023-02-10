@@ -11,6 +11,7 @@ import util.DateUtil;
 import util.ProperFormats;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 import java.util.Optional;
 
 public class HeirEditController {
@@ -159,6 +160,13 @@ public class HeirEditController {
                 main.showHeirOverview();
             }
 
+        }
+    }
+
+    public void handleCreateNewAsset(){
+        System.out.println(assetsComboBox.getValue());
+        if (Objects.equals(assetsComboBox.getValue(), "Yacht")){
+            main.showAssetCreate("Yacht", heir);
         }
     }
 
