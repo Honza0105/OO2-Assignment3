@@ -101,8 +101,10 @@ public class HeirCreateController {
             alertMessage += "Not a valid address!\n";
         }
         if (!DateUtil.validDate(dateOfBirthField.getText())){
-            alertMessage += "Not a valid date!\n" +
-                    "It is seen as " + dateOfBirthField.getText();
+            alertMessage += """
+                    Not a valid date!
+                    Please use format D. M. YYYY
+                    """;
         }
 
         if (!ProperFormats.positiveDecimalFormat(netWorthField.getText())){

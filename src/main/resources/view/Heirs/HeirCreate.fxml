@@ -74,7 +74,7 @@
                   <Insets left="152.0" />
                </GridPane.margin>
             </Button>
-            <Label text="Saved" textFill="#1f9e45" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="savedLabel" text="Saved" textFill="#1f9e45" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
       </GridPane>
    </children>
