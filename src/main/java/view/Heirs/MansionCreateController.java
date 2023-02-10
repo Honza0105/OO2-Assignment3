@@ -43,9 +43,23 @@ public class MansionCreateController {
 
     private Heir heir;
 
+    /**
+     *
+     * @param heir The heir from which we've got to this window and which owns this asset
+     */
     public void setMansion(Heir heir){
         islandComboBox.setItems(main.getIslandObservableList());
         this.heir = heir;
+    }
+
+    /**
+     * sets booleans
+     * @param main Main class
+     */
+    public void setMain(Main main) {
+        this.main = main;
+        main.setSaved(false);
+        main.setEditScene(true);
     }
 
 }

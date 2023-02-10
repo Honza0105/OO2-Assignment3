@@ -202,40 +202,43 @@ public class Main extends Application {
 
 	}
 
+
 	public void showAssetCreate(String type, Heir heir) {
 		setEditScene(true);
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader();
 			if (type.equals("Yacht")){
 				fxmlLoader.setLocation(Main.class.getResource("/view/Heirs/YachtCreate.fxml"));
+				AnchorPane assetCreate = fxmlLoader.load();
+				rootLayout.setCenter(assetCreate);
 				YachtCreateController controller = fxmlLoader.getController();
 				controller.setMain(this);
 				controller.setYacht(heir);
 			}
 			if (type.equals("Plane")){
 				fxmlLoader.setLocation(Main.class.getResource("/view/Heirs/PlaneCreate.fxml"));
+				AnchorPane assetCreate = fxmlLoader.load();
+				rootLayout.setCenter(assetCreate);
 				PlaneCreateController controller = fxmlLoader.getController();
 				controller.setMain(this);
 				controller.setPlane(heir);
 			}
 			if (type.equals("Mansion")){
 				fxmlLoader.setLocation(Main.class.getResource("/view/Heirs/MansionCreate.fxml"));
+				AnchorPane assetCreate = fxmlLoader.load();
+				rootLayout.setCenter(assetCreate);
 				MansionCreateController controller = fxmlLoader.getController();
 				controller.setMain(this);
 				controller.setMansion(heir);
 			}
 			if (type.equals("Island")){
 				fxmlLoader.setLocation(Main.class.getResource("/view/Heirs/IslandCreate.fxml"));
+				AnchorPane assetCreate = fxmlLoader.load();
+				rootLayout.setCenter(assetCreate);
 				IslandCreateController controller = fxmlLoader.getController();
 				controller.setMain(this);
 				controller.setIsland(heir);
 			}
-
-
-			System.out.println(fxmlLoader.getLocation());
-			AnchorPane heirEdit = fxmlLoader.load();
-
-			rootLayout.setCenter(heirEdit);
 		}
 		catch (IOException e){
 			e.printStackTrace();
