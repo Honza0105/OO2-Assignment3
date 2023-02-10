@@ -1,6 +1,7 @@
 package view.Heirs;
 
 import app.Main;
+import domain.Heir;
 import domain.Island;
 import domain.Mansion;
 import javafx.fxml.FXML;
@@ -39,6 +40,12 @@ public class MansionCreateController {
 
     private boolean pressedExit;
 
-    private Mansion mansion;
+
+    private Heir heir;
+
+    public void setMansion(Heir heir){
+        islandComboBox.setItems(main.getIslandObservableList());
+        this.heir = heir;
+    }
 
 }

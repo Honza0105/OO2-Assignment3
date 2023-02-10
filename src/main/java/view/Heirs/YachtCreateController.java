@@ -51,7 +51,7 @@ public class YachtCreateController {
 
     private boolean pressedExit;
 
-    private Yacht yacht;
+
 
     private Heir heir;
 

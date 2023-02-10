@@ -1,6 +1,7 @@
 package view.Heirs;
 
 import app.Main;
+import domain.Heir;
 import domain.Island;
 import domain.Plane;
 import javafx.fxml.FXML;
@@ -39,9 +40,14 @@ public class PlaneCreateController {
 
     private boolean pressedExit;
 
-    private Plane plane;
 
 
 
     private Main main;
+    private Heir heir;
+
+    public void setPlane(Heir heir){
+        islandComboBox.setItems(main.getIslandObservableList());
+        this.heir = heir;
+    }
 }

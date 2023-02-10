@@ -2,6 +2,7 @@ package view.Heirs;
 
 import app.Main;
 import domain.Asset;
+import domain.Heir;
 import domain.Island;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -45,8 +46,10 @@ public class IslandCreateController {
     private ObservableList<Island.Climate> climates = FXCollections.observableArrayList(Island.Climate.TROPICAL, Island.Climate.SUBTROPICAL, Island.Climate.TEMPERATE, Island.Climate.CONTINENTAL, Island.Climate.ARCTIC);
 
     private Main main;
+    private Heir heir;
 
-    private boolean pressedExit;
 
-    private Island island;
+    public void setIsland(Heir heir){
+        this.heir = heir;
+    }
 }
