@@ -66,6 +66,7 @@ public class Main extends Application {
 		sara.addAsset(mansion1);
 		john.addAsset(plane1);
 		john.addAsset(assetObservableList.get(2));
+		john.addAsset(yacht1);
 
 
 	}
