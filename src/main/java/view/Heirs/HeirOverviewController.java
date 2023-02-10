@@ -6,10 +6,7 @@ import domain.Heir;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import util.DateUtil;
 import util.ProperFormats;
 
@@ -94,12 +91,20 @@ public class HeirOverviewController {
 
     @FXML
     public void deleteHeir(){
-        for (Asset asset: heirTableView.getSelectionModel().getSelectedItem().getAssets()
-        ) {
-            main.getAssetObservableList().remove(asset);
+        if (heirTableView.getSelectionModel().getSelectedItem() == null){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(main.getStage());
+            alert.setHeaderText("No heir selected");
+            alert.setContentText("Please select an heir you want to delete.");
+            alert.showAndWait();
         }
-        main.getHeirObservableList().remove(heirTableView.getSelectionModel().getSelectedItem());
-
+        else {
+            for (Asset asset : heirTableView.getSelectionModel().getSelectedItem().getAssets()
+            ) {
+                main.getAssetObservableList().remove(asset);
+            }
+            main.getHeirObservableList().remove(heirTableView.getSelectionModel().getSelectedItem());
+        }
     }
 
     @FXML
