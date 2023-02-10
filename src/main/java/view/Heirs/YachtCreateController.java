@@ -11,6 +11,9 @@ import util.ProperFormats;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+/**
+ * This class handles the FXML window in which Yachts can be created
+ */
 public class YachtCreateController {
     @FXML
     private TextField nameField;
@@ -55,11 +58,19 @@ public class YachtCreateController {
     public void initialize() {
     }
 
+    /**
+     *
+     * @param heir The heir from which we've got to this window and which owns this asset
+     */
     public void setYacht(Heir heir){
         islandComboBox.setItems(main.getIslandObservableList());
         this.heir = heir;
     }
 
+    /**
+     * sets booleans
+     * @param main Main class
+     */
     public void setMain(Main main) {
         this.main = main;
         main.setSaved(false);
@@ -127,6 +138,10 @@ public class YachtCreateController {
             main.setSaved(true);
         }
 
+    /**
+     * Checks input
+     * @return True if input is valid
+     */
     private boolean isInputValid() {
         String alertMessage = ProperFormats.isSharedInputValid(nameField,descriptionField,valueField,rentPerWeekField);
 
