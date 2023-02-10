@@ -64,7 +64,7 @@ public class MansionCreateController {
     }
 
     @FXML
-    public void exitEditDialog(){
+    public void exitCreateDialog(){
         if (main.isSaved()){
             main.showHeirEdit(heir);
         }

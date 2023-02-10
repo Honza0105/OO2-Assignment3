@@ -71,7 +71,7 @@
                     </GridPane.margin></TextField>
                 <ButtonBar prefWidth="123.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
                     <buttons>
-                        <Button mnemonicParsing="false" onAction="#saveEditDialog" text="Save" />
+                        <Button mnemonicParsing="false" onAction="#saveCreateDialog" text="Save" />
                         <Button mnemonicParsing="false" onAction="#exitEditDialog" text="Exit" />
                         <Label fx:id="savedLabel" minWidth="38.0" prefHeight="16.0" text="Saved" textFill="#1f9e45" visible="false" />
                     </buttons>

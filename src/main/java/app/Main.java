@@ -271,4 +271,21 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
+
+	public void createHeir() {
+		setEditScene(false);
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			fxmlLoader.setLocation(Main.class.getResource("/view/Heirs/HeirCreate.fxml"));
+			System.out.println(fxmlLoader.getLocation());
+			AnchorPane createHeir = fxmlLoader.load();
+
+			rootLayout.setCenter(createHeir);
+			HeirCreateController controller = fxmlLoader.getController();
+			controller.setMain(this);
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
+	}
 }

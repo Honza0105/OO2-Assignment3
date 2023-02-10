@@ -87,7 +87,7 @@ public class PlaneCreateController {
 
             if (result.get() == buttonSaveBeforeExit) {
                 pressedExit = true;
-                saveEditDialog();
+                saveCreateDialog();
                 main.showHeirEdit(heir);
             } else if (result.get() == buttonExitAnyways) {
                 main.showHeirEdit(heir);
@@ -97,7 +97,7 @@ public class PlaneCreateController {
     }
 
     @FXML
-    public void saveEditDialog(){
+    public void saveCreateDialog(){
         if (isInputValid()){
             Plane newPlane;
             if (rentPerWeekField.getText().isEmpty()) {

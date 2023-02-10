@@ -4,7 +4,6 @@ import app.Main;
 import domain.Asset;
 import domain.Heir;
 import domain.Island;
-import domain.Yacht;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -73,7 +72,7 @@ public class IslandCreateController {
     }
 
     @FXML
-    public void exitEditDialog(){
+    public void exitCreateDialog(){
         if (main.isSaved()){
             main.showHeirEdit(heir);
         }

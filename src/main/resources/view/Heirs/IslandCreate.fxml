@@ -110,7 +110,7 @@
                     </GridPane.margin>
                 </ListView>
                   <Label fx:id="savedLabel" alignment="CENTER" minWidth="38.0" prefHeight="17.0" prefWidth="147.0" text="Saved" textFill="#1f9e45" visible="false" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                  <Button mnemonicParsing="false" onAction="#exitEditDialog" prefHeight="26.0" prefWidth="113.0" text="Exit" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                  <Button mnemonicParsing="false" onAction="#exitCreateDialog" prefHeight="26.0" prefWidth="113.0" text="Exit" GridPane.columnIndex="4" GridPane.rowIndex="3">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

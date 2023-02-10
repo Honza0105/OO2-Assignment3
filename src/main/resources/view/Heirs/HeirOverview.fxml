@@ -101,7 +101,7 @@
                               <Font size="28.0" />
                            </font></Label>
                         <ListView fx:id="assetsListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                      <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="127.0" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                      <Button mnemonicParsing="false" onAction="#createHeir" prefHeight="33.0" prefWidth="127.0" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="8">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin></Button>

@@ -97,6 +97,11 @@ public class HeirOverviewController {
         main.getHeirObservableList().remove(heirTableView.getSelectionModel().getSelectedItem());
     }
 
+    @FXML
+    public void createHeir(){
+        main.createHeir();
+    }
+
     public void setMain(Main main) {
         this.main = main;
 
