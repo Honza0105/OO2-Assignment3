@@ -1,6 +1,7 @@
 package view.Assets;
 
 import app.Main;
+import domain.Heir;
 import domain.Island;
 import domain.Yacht;
 import javafx.fxml.FXML;
@@ -8,6 +9,7 @@ import javafx.scene.control.*;
 import util.ProperFormats;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Optional;
 
 public class YachtEditController {
@@ -45,6 +47,15 @@ public class YachtEditController {
     @FXML
     private CheckBox removeIslandCheckBox;
 
+    @FXML
+    private DatePicker dateFromDatePicker;
+
+    @FXML
+    private DatePicker dateTillDatePicker;
+
+    @FXML
+    private ComboBox<Heir> heirComboBox;
+
     private Main main;
 
     private boolean saved;
@@ -78,6 +89,7 @@ public class YachtEditController {
         lengthField.setText(String.valueOf(asset.getLength()));
         islandComboBox.setItems(main.getIslandObservableList());
         islandComboBox.setValue(asset.getHomeIsland());
+        heirComboBox.setItems(main.getHeirObservableList());
 
         this.yacht = asset;
     }
@@ -169,5 +181,12 @@ public class YachtEditController {
     }
     public void removeFromIsland(){
         yacht.setHomeIsland(null);
+    }
+
+    public void startRent() {
+        if (dateFromDatePicker.getValue().isBefore(dateTillDatePicker.getValue())&&(!dateFromDatePicker.getValue().isBefore(LocalDate.now()))){
+            main.startRent(yacht,dateFromDatePicker.getValue(),dateTillDatePicker.getValue(),heirComboBox.getValue());
+        }
+        //else warning
     }
 }

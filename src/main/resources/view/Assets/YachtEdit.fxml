@@ -91,7 +91,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-             <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+             <ComboBox fx:id="heirComboBox" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
              <ButtonBar prefWidth="123.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
                  <buttons>
                      <Button mnemonicParsing="false" onAction="#saveEditDialog" text="Save" />
@@ -104,12 +104,7 @@
              </ButtonBar>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <children>
-                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="RENT" />
-                  <Label prefHeight="66.0" prefWidth="60.0" text="End date before Start date" textFill="#a81414" visible="false" wrapText="true">
-                     <padding>
-                        <Insets left="5.0" />
-                     </padding>
-                  </Label>
+                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#startRent" text="RENT" />
                    <Label prefHeight="26.0" prefWidth="17.0" text="✓" textFill="#319e2a" visible="false">
                        <font>
                            <Font size="19.0" />
@@ -136,8 +131,8 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <DatePicker fx:id="dateFromDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <DatePicker fx:id="dateTillDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <Label text="Island" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="11.0" />

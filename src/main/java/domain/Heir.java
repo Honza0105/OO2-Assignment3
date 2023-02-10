@@ -42,6 +42,11 @@ public class Heir {
 		return name.get();
 	}
 
+	@Override
+	public String toString() {
+		return getName();
+	}
+
 	public StringProperty nameProperty() {
 		return name;
 	}

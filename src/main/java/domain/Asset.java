@@ -5,6 +5,9 @@ import javafx.beans.property.StringProperty;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
 public abstract class Asset implements Comparable<Asset> {
@@ -122,4 +125,12 @@ public abstract class Asset implements Comparable<Asset> {
 		Asset other = (Asset) obj;
 		return Objects.equals(id, other.id);
 	}
+
+	public BigDecimal getRent(LocalDate fromDate, LocalDate tillDate){
+		BigDecimal dateDifference = new BigDecimal(String.valueOf(ChronoUnit.DAYS.between(fromDate, tillDate)));
+		BigDecimal daysInWeek = new BigDecimal(7);
+		BigDecimal weeks = dateDifference.divide(daysInWeek, RoundingMode.HALF_UP);
+		return weeks.multiply(rentPerWeek);
+	}
+
 }

@@ -94,11 +94,6 @@
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                     <children>
                         <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="RENT" />
-                        <Label prefHeight="66.0" prefWidth="60.0" text="End date before Start date" textFill="#a81414" visible="false" wrapText="true">
-                            <padding>
-                                <Insets left="5.0" />
-                            </padding>
-                        </Label>
                         <Label prefHeight="26.0" prefWidth="17.0" text="✓" textFill="#319e2a" visible="false">
                             <font>
                                 <Font size="19.0" />

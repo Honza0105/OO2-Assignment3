@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import util.DateUtil;
 import view.Assets.*;
 import view.Heirs.*;
 import view.RootLayoutController;
@@ -30,6 +31,9 @@ public class Main extends Application {
 	private ObservableList<Asset> assetObservableList = FXCollections.observableArrayList();
 
 	private ObservableList<Island> islandObservableList = FXCollections.observableArrayList();
+
+
+	private ObservableList<Rent> rentObservableList = FXCollections.observableArrayList();
 
 	private Map<Class<? extends Asset>, String> fxmlFileMap = new HashMap<>();
 
@@ -269,10 +273,6 @@ public class Main extends Application {
 		return islandObservableList;
 	}
 
-	public static void main(String[] args) {
-		launch(args);
-	}
-
 	public void createHeir() {
 		setEditScene(false);
 		try {
@@ -288,5 +288,15 @@ public class Main extends Application {
 		catch (IOException e){
 			e.printStackTrace();
 		}
+	}
+
+	public void startRent(Asset asset, LocalDate fromDate, LocalDate tillDate, Heir occupant){
+		Rent newRent = new Rent(asset,occupant,fromDate,tillDate,asset.getRent(fromDate,tillDate), DateUtil.getPaymentDay());
+		rentObservableList.add(newRent);
+		System.out.println(rentObservableList);
+	}
+
+	public static void main(String[] args) {
+		launch(args);
 	}
 }

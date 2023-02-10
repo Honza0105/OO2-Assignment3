@@ -3,6 +3,7 @@ package util;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoUnit;
 
 /**
  * Helper functions for handling dates.
@@ -58,5 +59,10 @@ public class DateUtil {
     public static boolean validDate(String dateString) {
         // Try to parse the String.
         return DateUtil.parse(dateString) != null;
+    }
+
+    public static LocalDate getPaymentDay() {
+        LocalDate today = LocalDate.now();
+        return today.plus(3, ChronoUnit.DAYS);
     }
 }

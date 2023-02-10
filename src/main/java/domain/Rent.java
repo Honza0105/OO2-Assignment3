@@ -21,7 +21,19 @@ public class Rent {
 		this.rent = rent;
 		this.dateOfPayment = dateOfPayment;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Rent{" +
+				"asset=" + asset +
+				", occupant=" + occupant +
+				", start=" + start +
+				", end=" + end +
+				", rent=" + rent +
+				", dateOfPayment=" + dateOfPayment +
+				'}';
+	}
+
 	public Asset getAsset() {
 		return asset;
 	}

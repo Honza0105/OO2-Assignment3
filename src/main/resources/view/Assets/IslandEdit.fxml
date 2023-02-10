@@ -157,11 +157,6 @@
                           <Font size="19.0" />
                       </font>
                   </Label>
-            <Label alignment="CENTER" prefHeight="66.0" prefWidth="112.0" text="End date before Start date" textFill="#a81414" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
             </children>
         </GridPane>
     </children>
