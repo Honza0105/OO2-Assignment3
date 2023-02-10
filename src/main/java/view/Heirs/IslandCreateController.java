@@ -4,13 +4,15 @@ import app.Main;
 import domain.Asset;
 import domain.Heir;
 import domain.Island;
+import domain.Yacht;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import util.ProperFormats;
+
+import java.math.BigDecimal;
+import java.util.Optional;
 
 public class IslandCreateController {
     @FXML
@@ -48,6 +50,8 @@ public class IslandCreateController {
     private Main main;
     private Heir heir;
 
+    private boolean pressedExit;
+
 
     /**
      *
@@ -67,5 +71,91 @@ public class IslandCreateController {
         main.setEditScene(true);
     }
 
+    @FXML
+    public void exitEditDialog(){
+        if (main.isSaved()){
+            main.showHeirEdit(heir);
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(main.getStage());
+            alert.setTitle("File not saved");
+            alert.setHeaderText("Are you sure?");
+            alert.setContentText("If not saved, all changes will be lost.");
+            ButtonType buttonSaveBeforeExit = new ButtonType("Save before exit");
+            ButtonType buttonExitAnyways = new ButtonType("Exit anyways");
 
+            alert.getButtonTypes().setAll(buttonSaveBeforeExit, buttonExitAnyways);
+
+            Optional<ButtonType> result = alert.showAndWait();
+
+            if (result.get() == buttonSaveBeforeExit) {
+                pressedExit = true;
+                saveEditDialog();
+                main.showHeirEdit(heir);
+            } else if (result.get() == buttonExitAnyways) {
+                main.showHeirEdit(heir);
+            }
+
+        }
+    }
+
+    @FXML
+    public void saveEditDialog(){
+        if (isInputValid()) {
+            Island newIsland;
+            if (rentPerWeekField.getText().isEmpty()) {
+                newIsland = new Island(nameField.getText(),
+                        descriptionField.getText(),
+                        new BigDecimal(valueField.getText()),
+                        Float.parseFloat(areaField.getText()),
+                        Float.parseFloat(latitudeField.getText()),
+                        Float.parseFloat(longitudeField.getText()),
+                        climateComboBox.getValue());
+                } else {
+                newIsland = new Island(nameField.getText(),
+                        descriptionField.getText(),
+                        new BigDecimal(valueField.getText()),
+                        new BigDecimal(rentPerWeekField.getText()),
+                        Float.parseFloat(areaField.getText()),
+                        Float.parseFloat(latitudeField.getText()),
+                        Float.parseFloat(longitudeField.getText()),
+                        climateComboBox.getValue());
+            }
+            main.getAssetObservableList().add(newIsland);
+            heir.addAsset(newIsland);
+        }
+
+
+
+        main.setSaved(true);
+    }
+
+    private boolean isInputValid() {
+        String alertMessage = ProperFormats.isSharedInputValid(nameField,descriptionField,valueField,rentPerWeekField);
+
+        if (!ProperFormats.decimalLongitudeFormat(longitudeField.getText())){
+            alertMessage += "Longitude can only contain decimals between -180 and 180!\n";
+        }
+        if (!ProperFormats.decimalLatitudeFormat(latitudeField.getText())){
+            alertMessage += "Latitude can only contain decimals between -90 and 90!\n";
+        }
+        if (!ProperFormats.positiveDecimalFormat(areaField.getText())){
+            alertMessage += "Area can only contain positive decimals!\n";
+        }
+
+        if (alertMessage.length()==0 || pressedExit){
+            return true;
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(main.getStage());
+            alert.setTitle("Invalid Fields");
+            alert.setHeaderText("Please correct invalid fields");
+            alert.setContentText(alertMessage);
+            alert.showAndWait();
+
+            return false;
+        }
+    }
 }
