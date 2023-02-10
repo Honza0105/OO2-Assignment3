@@ -132,11 +132,11 @@ public class YachtCreateController {
             heir.addAsset(newYacht);
             newYacht.setHomeIsland(islandComboBox.getValue());
             savedLabel.setVisible(true);
+            main.setSaved(true);
         }
 
 
 
-            main.setSaved(true);
         }
 
     /**

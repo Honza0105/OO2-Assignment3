@@ -112,7 +112,11 @@ public class MansionCreateController {
             main.getAssetObservableList().add(newMansion);
             heir.addAsset(newMansion);
             newMansion.setHomeIsland(islandComboBox.getValue());
+            savedLabel.setVisible(true);
+            main.setSaved(true);
+
         }
+
     }
 
     private boolean isInputValid() {

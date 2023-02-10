@@ -117,6 +117,9 @@ public class PlaneCreateController {
             main.getAssetObservableList().add(newPlane);
             heir.addAsset(newPlane);
             newPlane.setHomeIsland(islandComboBox.getValue());
+            savedLabel.setVisible(true);
+            main.setSaved(true);
+
         }
     }
 

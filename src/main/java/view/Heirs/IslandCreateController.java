@@ -124,11 +124,12 @@ public class IslandCreateController {
             }
             main.getAssetObservableList().add(newIsland);
             heir.addAsset(newIsland);
+            savedLabel.setVisible(true);
+            main.setSaved(true);
         }
 
 
 
-        main.setSaved(true);
     }
 
     private boolean isInputValid() {
