@@ -55,6 +55,7 @@ public class HeirEditController {
 
     private Heir heir;
 
+
     public void setMain(Main main) {
         this.main = main;
         main.setSaved(false);
