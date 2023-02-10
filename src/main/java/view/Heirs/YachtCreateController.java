@@ -80,7 +80,7 @@ public class YachtCreateController {
     @FXML
     public void exitEditDialog(){
         if (main.isSaved()){
-            main.showAssetOverview();
+            main.showHeirEdit(heir);
         }
         else {
             Alert alert = new Alert(Alert.AlertType.WARNING);

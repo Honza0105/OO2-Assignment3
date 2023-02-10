@@ -21,6 +21,34 @@ public class ProperFormats {
         return positiveDecimal.matcher(input).find();
     }
 
+    /**
+     * Checks whether the input of Longitude is between -180 to 180 degrees.
+     * @param input
+     * @return True if input is in correct format.
+     */
+    public static boolean decimalLongitudeFormat(String input){
+        if (input.equals("0")){
+            return false;
+        }
+        Pattern decimal = Pattern.compile("^-?(\\d|[1-9]\\d|1[0-7]\\d)(\\.\\d+)?$");
+        return decimal.matcher(input).find();
+    }
+
+    /**
+     * Checks whether the input of Latitude is between -90 to 90 degrees.
+     * @param input
+     * @return True if input is in correct format.
+     */
+    public static boolean decimalLatitudeFormat(String input){
+        if (input.equals("0")){
+            return false;
+        }
+        Pattern decimal = Pattern.compile("^-?(\\d|[0-8]\\d)(\\.\\d+)?$");
+        return decimal.matcher(input).find();
+    }
+
+
+
     public static boolean positiveDoubleFormat(String input){
         if (input.equals("0")){
             return false;

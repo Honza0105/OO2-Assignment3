@@ -105,11 +105,11 @@ public class IslandEditController {
     private boolean isInputValid() {
         String alertMessage = ProperFormats.isSharedInputValid(nameField,descriptionField,valueField,rentPerWeekField);
 
-        if (!ProperFormats.positiveDecimalFormat(longitudeField.getText())){
-            alertMessage += "Longitude can only contain positive decimals!\n";
+        if (!ProperFormats.decimalLongitudeFormat(longitudeField.getText())){
+            alertMessage += "Longitude can only contain decimals between -180 and 180!\n";
         }
-        if (!ProperFormats.positiveDecimalFormat(latitudeField.getText())){
-            alertMessage += "Latitude can only contain positive decimals!\n";
+        if (!ProperFormats.decimalLatitudeFormat(latitudeField.getText())){
+            alertMessage += "Latitude can only contain decimals between -90 and 90!\n";
         }
         if (!ProperFormats.positiveDecimalFormat(areaField.getText())){
             alertMessage += "Area can only contain positive decimals!\n";

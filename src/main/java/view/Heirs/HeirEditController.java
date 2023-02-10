@@ -165,10 +165,11 @@ public class HeirEditController {
 
     public void handleCreateNewAsset(){
         System.out.println(assetsComboBox.getValue());
-        if (Objects.equals(assetsComboBox.getValue(), "Yacht")){
-            main.showAssetCreate("Yacht", heir);
-        }
+        main.showAssetCreate(assetsComboBox.getValue(),heir);
+
+
     }
+
 
 
 
