@@ -59,6 +59,7 @@ public class IslandCreateController {
      */
     public void setIsland(Heir heir){
         this.heir = heir;
+        climateComboBox.setItems(climates);
     }
 
     /**
