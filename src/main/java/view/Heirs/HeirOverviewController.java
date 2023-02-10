@@ -94,7 +94,12 @@ public class HeirOverviewController {
 
     @FXML
     public void deleteHeir(){
+        for (Asset asset: heirTableView.getSelectionModel().getSelectedItem().getAssets()
+        ) {
+            main.getAssetObservableList().remove(asset);
+        }
         main.getHeirObservableList().remove(heirTableView.getSelectionModel().getSelectedItem());
+
     }
 
     @FXML
