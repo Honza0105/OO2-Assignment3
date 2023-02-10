@@ -25,7 +25,19 @@ public class RootLayoutController {
 	
 	@FXML
 	public void onClose() {
-		System.exit(0);
+		Dialog<ButtonType> dialog = new Dialog<>();
+		dialog.setTitle("Are you sure?");
+		dialog.setContentText("Be aware that all unsaved activity will be lost!");
+		ButtonType yesButton = new ButtonType("Yes I am sure", ButtonBar.ButtonData.YES);
+		ButtonType noButton = new ButtonType("No! I have changed my mind", ButtonBar.ButtonData.NO);
+
+		dialog.getDialogPane().getButtonTypes().setAll(yesButton, noButton);
+
+		Optional<ButtonType> result = dialog.showAndWait();
+
+		if (result.isPresent() && result.get() == yesButton) {
+			System.exit(0);
+		}
 	}
 	
 	@FXML
