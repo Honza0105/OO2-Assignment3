@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import util.DateUtil;
 import view.Assets.*;
 import view.Heirs.*;
+import view.Rents.RentsOverviewController;
 import view.RootLayoutController;
 
 import java.io.IOException;
@@ -71,6 +72,9 @@ public class Main extends Application {
 		john.addAsset(plane1);
 		john.addAsset(assetObservableList.get(2));
 		john.addAsset(yacht1);
+
+		Rent sampleRent = new Rent(yacht1,john,LocalDate.now(),LocalDate.of(2023,3,30),new BigDecimal("300000"),LocalDate.of(2023,3,10));
+		rentObservableList.add(sampleRent);
 
 
 	}
@@ -295,6 +299,27 @@ public class Main extends Application {
 		rentObservableList.add(newRent);
 		System.out.println(asset.getRent(fromDate,tillDate));
 		System.out.println(rentObservableList);
+	}
+
+	public void showRentOverview(){
+		setEditScene(false);
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			fxmlLoader.setLocation(Main.class.getResource("/view/Rents/RentsOverview.fxml"));
+			System.out.println(fxmlLoader.getLocation());
+			AnchorPane rentsOverview = fxmlLoader.load();
+
+			rootLayout.setCenter(rentsOverview);
+			RentsOverviewController controller = fxmlLoader.getController();
+			controller.setMain(this);
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
+	}
+
+	public ObservableList<Rent> getRentObservableList() {
+		return rentObservableList;
 	}
 
 	public static void main(String[] args) {
