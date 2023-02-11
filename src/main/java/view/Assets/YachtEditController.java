@@ -92,7 +92,7 @@ public class YachtEditController {
         lengthField.setText(String.valueOf(asset.getLength()));
         islandComboBox.setItems(main.getIslandObservableList());
         islandComboBox.setValue(asset.getHomeIsland());
-        heirComboBox.setItems(main.getHeirObservableList());
+        heirComboBox.setItems(main.getHeirObservableListWithoutOwner(main.getAssetHeirHashMap().get(asset)));
 
         this.yacht = asset;
     }

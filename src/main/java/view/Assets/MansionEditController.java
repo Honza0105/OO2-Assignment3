@@ -73,7 +73,7 @@ public class MansionEditController {
         addressField.setText(asset.getAddress());
         islandComboBox.setItems(main.getIslandObservableList());
         islandComboBox.setValue(asset.getHomeIsland());
-        heirComboBox.setItems(main.getHeirObservableList());
+        heirComboBox.setItems(main.getHeirObservableListWithoutOwner(main.getAssetHeirHashMap().get(asset)));
 
 
         this.mansion = asset;

@@ -92,7 +92,7 @@ public class IslandEditController {
         climateComboBox.setValue(asset.getClimate());
         ObservableList<Asset> assets = FXCollections.observableArrayList(asset.getAssets());
         assetsListView.setItems(assets);
-        heirComboBox.setItems(main.getHeirObservableList());
+        heirComboBox.setItems(main.getHeirObservableListWithoutOwner(main.getAssetHeirHashMap().get(asset)));
 
 
         this.island = asset;

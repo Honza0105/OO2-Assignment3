@@ -124,6 +124,7 @@ public class IslandCreateController {
             }
             main.getAssetObservableList().add(newIsland);
             heir.addAsset(newIsland);
+            main.getAssetHeirHashMap().put(newIsland,heir);
             savedLabel.setVisible(true);
             main.setSaved(true);
         }

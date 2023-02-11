@@ -71,10 +71,18 @@ public class Main extends Application {
 		heirObservableList.add(john);
 		Heir sara = new Heir("Sara Zlota", "Poland Danzig 1", LocalDate.of(1999,1,3), Heir.Gender.FEMALE, new BigDecimal("200000000"), new BigDecimal("10000"));
 		heirObservableList.add(sara);
+
 		sara.addAsset(mansion1);
+		assetHeirHashMap.put(mansion1,sara);
+
 		john.addAsset(plane1);
+		assetHeirHashMap.put(plane1,john);
+
 		john.addAsset(assetObservableList.get(2));
+		assetHeirHashMap.put(assetObservableList.get(2),john);
 		john.addAsset(yacht1);
+		assetHeirHashMap.put(yacht1,john);
+
 
 		Rent sampleRent = new Rent(yacht1,sara,LocalDate.now(),LocalDate.of(2023,3,30),new BigDecimal("300000"),LocalDate.of(2023,3,10));
 		rentObservableList.add(sampleRent);
@@ -83,6 +91,11 @@ public class Main extends Application {
 	}
 
 	public ObservableList<Heir> getHeirObservableList() {
+		return heirObservableList;
+	}
+
+	public ObservableList<Heir> getHeirObservableListWithoutOwner(Heir owner) {
+		heirObservableList.remove(owner);
 		return heirObservableList;
 	}
 
@@ -341,6 +354,10 @@ public class Main extends Application {
 
 	public ObservableList<Rent> getRentObservableList() {
 		return rentObservableList;
+	}
+
+	public HashMap<Asset, Heir> getAssetHeirHashMap() {
+		return assetHeirHashMap;
 	}
 
 	public static void main(String[] args) {
