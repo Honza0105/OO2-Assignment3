@@ -2,8 +2,6 @@ package domain;
 
 import javafx.beans.property.FloatProperty;
 import javafx.beans.property.SimpleFloatProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableSet;
 
 import java.math.BigDecimal;
 import java.util.SortedSet;
@@ -13,8 +11,7 @@ public class Island extends Asset {
 	private FloatProperty area;
 	private Coordinate coordinate;
 	private Climate climate;
-	private ObservableSet<Asset> assets;
-
+	private SortedSet<Asset> assets;
 
 	public Island(String name, String description, BigDecimal value, BigDecimal rentPerWeek, float area,
 			Coordinate coordinate, Climate climate, SortedSet<Asset> assets) {
@@ -22,7 +19,7 @@ public class Island extends Asset {
 		this.area = new SimpleFloatProperty(area);
 		this.coordinate = coordinate;
 		this.climate = climate;
-		this.assets = FXCollections.observableSet(assets);
+		this.assets = assets;
 	}
 	public Island(String name, String description, BigDecimal value, float area,
 				  Coordinate coordinate, Climate climate, SortedSet<Asset> assets) {
@@ -30,8 +27,7 @@ public class Island extends Asset {
 		this.area = new SimpleFloatProperty(area);
 		this.coordinate = coordinate;
 		this.climate = climate;
-		this.assets = FXCollections.observableSet(assets);
-
+		this.assets = assets;
 	}
 	
 	public Island(String name, String description, BigDecimal value, BigDecimal rentPerWeek, float area,
@@ -40,7 +36,7 @@ public class Island extends Asset {
 		this.area = new SimpleFloatProperty(area);
 		this.coordinate = coordinate;
 		this.climate = climate;
-		this.assets = FXCollections.observableSet(assets);
+		this.assets = new TreeSet<>();
 	}
 
 	public Island(String name, String description, BigDecimal value, float area,
@@ -49,7 +45,7 @@ public class Island extends Asset {
 		this.area = new SimpleFloatProperty(area);
 		this.coordinate = coordinate;
 		this.climate = climate;
-		this.assets = FXCollections.observableSet(new TreeSet<>());
+		this.assets = new TreeSet<>();
 	}
 	
 	public Island(String name, String description, BigDecimal value, BigDecimal rentPerWeek, float area,
@@ -58,7 +54,7 @@ public class Island extends Asset {
 		this.area = new SimpleFloatProperty(area);
 		this.coordinate = new Coordinate(latitude, longitude);
 		this.climate = climate;
-		this.assets = FXCollections.observableSet(assets);
+		this.assets = assets;
 	}
 
 	public Island(String name, String description, BigDecimal value, float area,
@@ -67,7 +63,7 @@ public class Island extends Asset {
 		this.area = new SimpleFloatProperty(area);
 		this.coordinate = new Coordinate(latitude, longitude);
 		this.climate = climate;
-		this.assets = FXCollections.observableSet(assets);
+		this.assets = assets;
 	}
 	
 	public Island(String name, String description, BigDecimal value, BigDecimal rentPerWeek, float area,
@@ -76,7 +72,7 @@ public class Island extends Asset {
 		this.area = new SimpleFloatProperty(area);
 		this.coordinate = new Coordinate(latitude, longitude);
 		this.climate = climate;
-		this.assets = FXCollections.observableSet(new TreeSet<>());
+		this.assets = new TreeSet<>();
 	}
 
 	public Island(String name, String description, BigDecimal value, float area,
@@ -85,7 +81,7 @@ public class Island extends Asset {
 		this.area = new SimpleFloatProperty(area);
 		this.coordinate = new Coordinate(latitude, longitude);
 		this.climate = climate;
-		this.assets = FXCollections.observableSet(new TreeSet<>());
+		this.assets = new TreeSet<>();
 	}
 
 	public float getArea() {
@@ -131,10 +127,7 @@ public class Island extends Asset {
 	}
 
 	public boolean removeAsset(Asset asset) {
-		System.out.println("Before removing: " + assets);
-		boolean result = assets.remove(asset);
-		System.out.println("After removing: " + assets);
-		return result;
+		return assets.remove(asset);
 	}
 
 	public void setLongitude(float newLongitude) {

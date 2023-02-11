@@ -98,7 +98,7 @@ public abstract class Asset implements Comparable<Asset> {
 	@Override
 	public int compareTo(Asset other) {
 		if (this.value.equals(other.value)) {
-			return (other.id.min(this.id)).intValue();
+			return 0;
 		}
 		else {
 			return this.value.compareTo(other.value);
