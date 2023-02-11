@@ -1,6 +1,7 @@
 package view.Assets;
 
 import app.Main;
+import domain.Heir;
 import domain.Island;
 import domain.Plane;
 import javafx.fxml.FXML;
@@ -8,6 +9,7 @@ import javafx.scene.control.*;
 import util.ProperFormats;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Optional;
 
 public class PlaneEditController {
@@ -38,6 +40,15 @@ public class PlaneEditController {
     @FXML
     private CheckBox removeIslandCheckBox;
 
+    @FXML
+    private DatePicker dateFromDatePicker;
+
+    @FXML
+    private DatePicker dateTillDatePicker;
+
+    @FXML
+    private ComboBox<Heir> heirComboBox;
+
     private boolean pressedExit;
 
     private Plane plane;
@@ -64,6 +75,8 @@ public class PlaneEditController {
         numberOfPassengersField.setText(String.valueOf(asset.getNumberOfPassengers()));
         islandComboBox.setItems(main.getIslandObservableList());
         islandComboBox.setValue(asset.getHomeIsland());
+        heirComboBox.setItems(main.getHeirObservableList());
+
 
         this.plane = asset;
     }
@@ -147,4 +160,33 @@ public class PlaneEditController {
     public void removeFromIsland(){
         plane.setHomeIsland(null);
     }
+
+
+    public void startRent() {
+        String alertMessage = "";
+        if (dateFromDatePicker.getValue().isAfter(dateTillDatePicker.getValue())){
+            alertMessage +=  "Start date must be before end date.\n";
+        }
+        if (dateFromDatePicker.getValue().isBefore(LocalDate.now())){
+            alertMessage += "Start date must not be before today.\n";
+        }
+        if (heirComboBox.getValue()==null) {
+            alertMessage +="Please select the heir.\n";
+        }
+        if (alertMessage.length()==0 || pressedExit){
+            main.startRent(plane,dateFromDatePicker.getValue(),dateTillDatePicker.getValue(),heirComboBox.getValue());
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(main.getStage());
+            alert.setTitle("Invalid Fields");
+            alert.setHeaderText("Please correct invalid fields");
+            alert.setContentText(alertMessage);
+            alert.showAndWait();
+        }
+
+
+    }
+
+
 }

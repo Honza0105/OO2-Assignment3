@@ -293,6 +293,7 @@ public class Main extends Application {
 	public void startRent(Asset asset, LocalDate fromDate, LocalDate tillDate, Heir occupant){
 		Rent newRent = new Rent(asset,occupant,fromDate,tillDate,asset.getRent(fromDate,tillDate), DateUtil.getPaymentDay());
 		rentObservableList.add(newRent);
+		System.out.println(asset.getRent(fromDate,tillDate));
 		System.out.println(rentObservableList);
 	}
 

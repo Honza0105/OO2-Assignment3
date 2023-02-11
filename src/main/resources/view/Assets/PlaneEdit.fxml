@@ -80,7 +80,7 @@
                         <Insets left="10.0" />
                     </GridPane.margin>
                 </Label>
-                <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <ComboBox fx:id="heirComboBox" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
                 <ButtonBar prefWidth="123.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
                     <buttons>
                         <Button mnemonicParsing="false" onAction="#saveEditDialog" text="Save" />
@@ -93,7 +93,7 @@
                 </ButtonBar>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                     <children>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="RENT" />
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#startRent" text="RENT" />
                         <Label prefHeight="26.0" prefWidth="17.0" text="✓" textFill="#319e2a" visible="false">
                             <font>
                                 <Font size="19.0" />
@@ -120,8 +120,8 @@
                         <Insets left="10.0" />
                     </GridPane.margin>
                 </Label>
-                <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <DatePicker fx:id="dateFromDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <DatePicker fx:id="dateTillDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label text="Island" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <ComboBox fx:id="islandComboBox" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <CheckBox fx:id="removeIslandCheckBox" mnemonicParsing="false" text="Remove from island" GridPane.columnIndex="3" GridPane.rowIndex="3">

@@ -129,7 +129,7 @@ public abstract class Asset implements Comparable<Asset> {
 	public BigDecimal getRent(LocalDate fromDate, LocalDate tillDate){
 		BigDecimal dateDifference = new BigDecimal(String.valueOf(ChronoUnit.DAYS.between(fromDate, tillDate)));
 		BigDecimal daysInWeek = new BigDecimal(7);
-		BigDecimal weeks = dateDifference.divide(daysInWeek, RoundingMode.HALF_UP);
+		BigDecimal weeks = dateDifference.divide(daysInWeek, RoundingMode.UP);
 		return weeks.multiply(rentPerWeek);
 	}
 

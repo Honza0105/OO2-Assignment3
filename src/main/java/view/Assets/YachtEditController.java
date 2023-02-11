@@ -184,9 +184,28 @@ public class YachtEditController {
     }
 
     public void startRent() {
-        if (dateFromDatePicker.getValue().isBefore(dateTillDatePicker.getValue())&&(!dateFromDatePicker.getValue().isBefore(LocalDate.now()))){
+        String alertMessage = "";
+        if (dateFromDatePicker.getValue().isAfter(dateTillDatePicker.getValue())){
+            alertMessage +=  "Start date must be before end date.\n";
+        }
+        if (dateFromDatePicker.getValue().isBefore(LocalDate.now())){
+            alertMessage += "Start date must not be before today.\n";
+        }
+        if (heirComboBox.getValue()==null) {
+            alertMessage +="Please select the heir.\n";
+        }
+        if (alertMessage.length()==0 || pressedExit){
             main.startRent(yacht,dateFromDatePicker.getValue(),dateTillDatePicker.getValue(),heirComboBox.getValue());
         }
-        //else warning
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(main.getStage());
+            alert.setTitle("Invalid Fields");
+            alert.setHeaderText("Please correct invalid fields");
+            alert.setContentText(alertMessage);
+            alert.showAndWait();
+        }
+
+
     }
 }

@@ -117,7 +117,7 @@
                         <Insets left="10.0" />
                     </GridPane.margin>
                 </Label>
-                <ComboBox prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                <ComboBox fx:id="heirComboBox" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="5.0" right="10.0" />
                </GridPane.margin></ComboBox>
@@ -135,7 +135,7 @@
                   <Insets left="5.0" right="10.0" />
                </GridPane.margin>
             </Button>
-                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="RENT" GridPane.rowIndex="4">
+                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#startRent" text="RENT" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="15.0" />
                </GridPane.margin>
@@ -150,8 +150,8 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <DatePicker GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dateFromDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dateTillDatePicker" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                   <Label alignment="CENTER" prefHeight="34.0" prefWidth="89.0" text="✓" textAlignment="CENTER" textFill="#319e2a" GridPane.columnIndex="1" GridPane.rowIndex="4">
                       <font>
                           <Font size="19.0" />

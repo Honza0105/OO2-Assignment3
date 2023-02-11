@@ -2,6 +2,7 @@ package view.Assets;
 
 import app.Main;
 import domain.Asset;
+import domain.Heir;
 import domain.Island;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +11,7 @@ import javafx.scene.control.*;
 import util.ProperFormats;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
@@ -43,6 +45,15 @@ public class IslandEditController {
 
     @FXML
     private Label savedLabel;
+
+    @FXML
+    private DatePicker dateFromDatePicker;
+
+    @FXML
+    private DatePicker dateTillDatePicker;
+
+    @FXML
+    private ComboBox<Heir> heirComboBox;
 
     private ObservableList<Island.Climate> climates = FXCollections.observableArrayList(Island.Climate.TROPICAL, Island.Climate.SUBTROPICAL, Island.Climate.TEMPERATE, Island.Climate.CONTINENTAL, Island.Climate.ARCTIC);
 
@@ -79,6 +90,8 @@ public class IslandEditController {
         climateComboBox.setValue(asset.getClimate());
         ObservableList<Asset> assets = FXCollections.observableArrayList(asset.getAssets());
         assetsListView.setItems(assets);
+        heirComboBox.setItems(main.getHeirObservableList());
+
 
         this.island = asset;
     }
@@ -157,5 +170,31 @@ public class IslandEditController {
             }
 
         }
+    }
+
+    public void startRent() {
+        String alertMessage = "";
+        if (dateFromDatePicker.getValue().isAfter(dateTillDatePicker.getValue())){
+            alertMessage +=  "Start date must be before end date.\n";
+        }
+        if (dateFromDatePicker.getValue().isBefore(LocalDate.now())){
+            alertMessage += "Start date must not be before today.\n";
+        }
+        if (heirComboBox.getValue()==null) {
+            alertMessage +="Please select the heir.\n";
+        }
+        if (alertMessage.length()==0 || pressedExit){
+            main.startRent(island,dateFromDatePicker.getValue(),dateTillDatePicker.getValue(),heirComboBox.getValue());
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(main.getStage());
+            alert.setTitle("Invalid Fields");
+            alert.setHeaderText("Please correct invalid fields");
+            alert.setContentText(alertMessage);
+            alert.showAndWait();
+        }
+
+
     }
 }
