@@ -152,6 +152,10 @@ public class RootLayoutController {
 		main.showAssetDistribution();
 	}
 
+	public void onValueOverTimeDistribution() {
+		main.showValueOverTimeDistribution();
+	}
+
 	@FXML
 	public void onHelp(){
 		//To be implemented

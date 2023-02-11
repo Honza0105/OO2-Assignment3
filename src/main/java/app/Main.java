@@ -16,6 +16,7 @@ import view.Rents.RentsEditController;
 import view.Rents.RentsOverviewController;
 import view.RootLayoutController;
 import view.Statistics.AssetDistributionController;
+import view.Statistics.RentedValueDistributionController;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -389,6 +390,23 @@ public class Main extends Application {
 			rootLayout.setCenter(assetDistribution);
 			AssetDistributionController controller = fxmlLoader.getController();
 			controller.setMain(this);
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
+	}
+
+	public void showValueOverTimeDistribution() {
+		setEditScene(false);
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			fxmlLoader.setLocation(Main.class.getResource("/view/Statistics/RentedValueDistribution.fxml"));
+			System.out.println(fxmlLoader.getLocation());
+			AnchorPane valueDistribution = fxmlLoader.load();
+
+			rootLayout.setCenter(valueDistribution);
+			RentedValueDistributionController controller = fxmlLoader.getController();
+			controller.setRentList(getRentObservableList());
 		}
 		catch (IOException e){
 			e.printStackTrace();

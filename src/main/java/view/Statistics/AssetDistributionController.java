@@ -22,27 +22,27 @@ public class AssetDistributionController {
     public void setMain(Main main) {
         this.main = main;
 
-        ObservableList<Heir> heirObservableList = main.getHeirObservableList();
+        int topHeirs = 9;
+        BigDecimal otherHeirsValue = BigDecimal.ZERO;
 
-        int n = heirObservableList.size();
-        int k = 9;
-        if (n > k) {
-            BigDecimal otherHeirsValue = new BigDecimal(0);
-            for (int i = k; i < n; i++) {
-                Heir heir = heirObservableList.get(i);
+        ObservableList<Heir> heirObservableList = main.getHeirObservableList();
+        heirObservableList.sort((o1, o2) -> o2.totalValue().compareTo(o1.totalValue()));
+
+        for (int i = 0; i < heirObservableList.size(); i++) {
+            Heir heir = heirObservableList.get(i);
+
+            if (i < topHeirs) {
+                pieChartData.add(new PieChart.Data(heir.getName(), heir.totalValue().doubleValue()));
+            } else {
                 otherHeirsValue = otherHeirsValue.add(heir.totalValue());
             }
-            for (int i = 0; i < k; i++) {
-                Heir heir = heirObservableList.get(i);
-                pieChartData.add(new PieChart.Data(heir.getName(), heir.totalValue().doubleValue()));
-            }
+        }
+
+        if (otherHeirsValue.compareTo(BigDecimal.ZERO) > 0) {
             pieChartData.add(new PieChart.Data("Other Heirs", otherHeirsValue.doubleValue()));
-        } else {
-            for (Heir heir : heirObservableList) {
-                pieChartData.add(new PieChart.Data(heir.getName(), heir.totalValue().doubleValue()));
-            }
         }
 
         pieChart.setData(pieChartData);
     }
+
 }

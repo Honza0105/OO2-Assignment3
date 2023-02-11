@@ -33,6 +33,7 @@
             <Menu mnemonicParsing="false" text="Statistics">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#onAssetDistribution" text="Distribution of Assets" />
+                  <MenuItem mnemonicParsing="false" onAction="#onValueOverTimeDistribution" text="Distribution of value rented over time" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="About">
