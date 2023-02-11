@@ -73,13 +73,17 @@ public class RootLayoutController {
 			alert.setContentText("If not saved, all changes will be lost.");
 			ButtonType buttonSaveBeforeExit = new ButtonType("I will save my data");
 			ButtonType buttonExitAnyways = new ButtonType("Exit anyways");
+			ButtonType buttonCancel = new ButtonType("Cancel");
 
-			alert.getButtonTypes().setAll(buttonSaveBeforeExit, buttonExitAnyways);
+
+			alert.getButtonTypes().setAll(buttonSaveBeforeExit, buttonExitAnyways, buttonCancel);
 
 			Optional<ButtonType> result = alert.showAndWait();
 
 			if (result.get() == buttonExitAnyways) {
 				main.showAssetOverview();
+			} else if (result.get() == buttonCancel) {
+				//do nothing
 			}
 
 		}
@@ -98,13 +102,17 @@ public class RootLayoutController {
 			alert.setContentText("If not saved, all changes will be lost.");
 			ButtonType buttonSaveBeforeExit = new ButtonType("I will save my data");
 			ButtonType buttonExitAnyways = new ButtonType("Exit anyways");
+			ButtonType buttonCancel = new ButtonType("Cancel");
 
-			alert.getButtonTypes().setAll(buttonSaveBeforeExit, buttonExitAnyways);
+
+			alert.getButtonTypes().setAll(buttonSaveBeforeExit, buttonExitAnyways, buttonCancel);
 
 			Optional<ButtonType> result = alert.showAndWait();
 
 			if (result.get() == buttonExitAnyways) {
 				main.showHeirOverview();
+			} else if (result.get() == buttonCancel) {
+				//do nothing
 			}
 
 		}
@@ -123,13 +131,17 @@ public class RootLayoutController {
 			alert.setContentText("If not saved, all changes will be lost.");
 			ButtonType buttonSaveBeforeExit = new ButtonType("I will save my data");
 			ButtonType buttonExitAnyways = new ButtonType("Exit anyways");
+			ButtonType buttonCancel = new ButtonType("Cancel");
 
-			alert.getButtonTypes().setAll(buttonSaveBeforeExit, buttonExitAnyways);
+
+			alert.getButtonTypes().setAll(buttonSaveBeforeExit, buttonExitAnyways, buttonCancel);
 
 			Optional<ButtonType> result = alert.showAndWait();
 
 			if (result.get() == buttonExitAnyways) {
 				main.showRentOverview();
+			} else if (result.get() == buttonCancel) {
+				//do nothing
 			}
 
 		}
