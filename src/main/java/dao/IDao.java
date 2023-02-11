@@ -1,8 +1,8 @@
 package dao;
 
-import java.math.BigInteger;
-
 import javafx.collections.ObservableList;
+
+import java.math.BigInteger;
 
 public interface IDao<T> {
 	ObservableList<T> getAll();

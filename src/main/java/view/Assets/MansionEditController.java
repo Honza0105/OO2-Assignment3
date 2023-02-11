@@ -11,7 +11,6 @@ import util.ProperFormats;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Optional;
-import java.util.regex.Pattern;
 
 public class MansionEditController {
     @FXML

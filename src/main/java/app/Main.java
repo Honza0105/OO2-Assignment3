@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import util.DateUtil;
 import view.Assets.*;
 import view.Heirs.*;
+import view.Rents.RentsEditController;
 import view.Rents.RentsOverviewController;
 import view.RootLayoutController;
 
@@ -32,6 +33,8 @@ public class Main extends Application {
 	private ObservableList<Asset> assetObservableList = FXCollections.observableArrayList();
 
 	private ObservableList<Island> islandObservableList = FXCollections.observableArrayList();
+
+	private HashMap<Asset, Heir> assetHeirHashMap = new HashMap<>();
 
 
 	private ObservableList<Rent> rentObservableList = FXCollections.observableArrayList();
@@ -73,7 +76,7 @@ public class Main extends Application {
 		john.addAsset(assetObservableList.get(2));
 		john.addAsset(yacht1);
 
-		Rent sampleRent = new Rent(yacht1,john,LocalDate.now(),LocalDate.of(2023,3,30),new BigDecimal("300000"),LocalDate.of(2023,3,10));
+		Rent sampleRent = new Rent(yacht1,sara,LocalDate.now(),LocalDate.of(2023,3,30),new BigDecimal("300000"),LocalDate.of(2023,3,10));
 		rentObservableList.add(sampleRent);
 
 
@@ -157,7 +160,7 @@ public class Main extends Application {
 
 
 	public void showHeirEdit(Heir heir) {
-		setEditScene(false);
+		setEditScene(true);
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader();
 			fxmlLoader.setLocation(Main.class.getResource("/view/Heirs/HeirEdit.fxml"));
@@ -312,6 +315,24 @@ public class Main extends Application {
 			rootLayout.setCenter(rentsOverview);
 			RentsOverviewController controller = fxmlLoader.getController();
 			controller.setMain(this);
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
+	}
+
+	public void showRentEdit(Rent rent) {
+		setEditScene(true);
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			fxmlLoader.setLocation(Main.class.getResource("/view/Rents/RentsEdit.fxml"));
+			System.out.println(fxmlLoader.getLocation());
+			AnchorPane rentEdit = fxmlLoader.load();
+
+			rootLayout.setCenter(rentEdit);
+			RentsEditController controller = fxmlLoader.getController();
+			controller.setMain(this);
+			controller.setRent(rent);
 		}
 		catch (IOException e){
 			e.printStackTrace();

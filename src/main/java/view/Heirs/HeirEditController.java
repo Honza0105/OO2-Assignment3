@@ -1,17 +1,16 @@
 package view.Heirs;
 
 import app.Main;
-import domain.*;
+import domain.Asset;
+import domain.Heir;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import org.w3c.dom.Text;
 import util.DateUtil;
 import util.ProperFormats;
 
 import java.math.BigDecimal;
-import java.util.Objects;
 import java.util.Optional;
 
 public class HeirEditController {

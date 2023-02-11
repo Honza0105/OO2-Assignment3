@@ -1,8 +1,6 @@
 package view.Rents;
 
 import app.Main;
-import domain.Asset;
-import domain.Heir;
 import domain.Rent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -59,15 +57,15 @@ public class RentsOverviewController {
             if (event.getClickCount() == 2){
                 Rent selectedRent = rentTableView.getSelectionModel().getSelectedItem();
                 System.out.println(selectedRent);
-//                main.showRentEdit(selectedRent);
-//
+                main.showRentEdit(selectedRent);
+
             }
         });
     }
 
     private void showRentDetails(Rent rent){
         if (rent != null){
-            occupantLabel.setText(rent.getOccupant().toString());
+            occupantLabel.setText(rent.getOccupant().getName());
             startLabel.setText(rent.getStart().toString());
             endLabel.setText(rent.getEnd().toString());
             rentLabel.setText(rent.getRent().toString());
