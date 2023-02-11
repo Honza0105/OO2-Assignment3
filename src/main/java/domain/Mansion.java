@@ -33,7 +33,7 @@ public class Mansion extends Asset {
 	
 	@Override
 	public String toString() {
-		return "Mansion: " + getName() + ",  " + getAddress() + ", described as, " + getDescription();
+		return "Mansion: " + getName();
 	}
 
 }

@@ -173,8 +173,6 @@ public class Island extends Asset {
 
 	@Override
 	public String toString() {
-		return "Island: "+ getName() +
-				"being " + getArea() +
-				"km2";
+		return "Island: "+ getName();
 	}
 }

@@ -25,7 +25,7 @@ public class Plane extends Asset {
 
 	@Override
 	public String toString() {
-		return "Plane: " + getName() + ", described as, " + getDescription() + ", with maximum altitude "+ getMaxAltitude()+" m and " + getNumberOfPassengers()+ " passengers";
+		return "Plane: " + getName();
 	}
 
 	public int getMaxAltitude() {
