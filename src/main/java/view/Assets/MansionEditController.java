@@ -158,7 +158,7 @@ public class MansionEditController {
         }
     }
     public void removeFromIsland(){
-        mansion.setHomeIsland(null);
+        mansion.removeFromHomeIsland();
     }
 
     public void startRent() {

@@ -165,7 +165,7 @@ public class PlaneEditController {
         }
     }
     public void removeFromIsland(){
-        plane.setHomeIsland(null);
+        plane.removeFromHomeIsland();
     }
 
 
