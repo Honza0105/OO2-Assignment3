@@ -87,6 +87,9 @@ public class Main extends Application {
 		Rent sampleRent = new Rent(yacht1,sara,LocalDate.now(),LocalDate.of(2023,3,30),new BigDecimal("300000"),LocalDate.of(2023,3,10));
 		rentObservableList.add(sampleRent);
 
+		System.out.println(island1.removeAsset(plane1));
+		System.out.println(island1.getAssets());
+
 
 	}
 

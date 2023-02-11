@@ -187,7 +187,7 @@ public class YachtEditController {
         }
     }
     public void removeFromIsland(){
-        yacht.setHomeIsland(null);
+        yacht.removeFromHomeIsland();
     }
 
     public void startRent() {

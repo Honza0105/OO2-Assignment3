@@ -101,6 +101,7 @@ public class HeirOverviewController {
         else {
             for (Asset asset : heirTableView.getSelectionModel().getSelectedItem().getAssets()
             ) {
+                asset.setHomeIsland(null);
                 main.getAssetObservableList().remove(asset);
             }
             main.getHeirObservableList().remove(heirTableView.getSelectionModel().getSelectedItem());

@@ -17,7 +17,9 @@ public abstract class Asset implements Comparable<Asset> {
 	private StringProperty description;
 	private BigDecimal value;
 	private BigDecimal rentPerWeek;
-	
+
+	private Island homeIsland;
+
 	public Asset(String name, String description, BigDecimal value, BigDecimal rentPerWeek) {
 		super();
 		this.id = currentId;
@@ -133,4 +135,17 @@ public abstract class Asset implements Comparable<Asset> {
 		return weeks.multiply(rentPerWeek);
 	}
 
+	public Island getHomeIsland() {
+		return homeIsland;
+	}
+
+	public void setHomeIsland(Island homeIsland) {
+		homeIsland.addAsset(this);
+		this.homeIsland = homeIsland;
+	}
+
+	public void removeFromHomeIsland() {
+		homeIsland.removeAsset(this);
+		this.homeIsland = null;
+	}
 }
