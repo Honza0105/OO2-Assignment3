@@ -21,7 +21,7 @@ public class HeirCreateController {
     private TextField addressField;
 
     @FXML
-    private TextField dateOfBirthField;
+    private DatePicker dateOfBirthDatePicker;
 
     @FXML
     private ComboBox<Heir.Gender> genderComboBox;
@@ -81,7 +81,7 @@ public class HeirCreateController {
             Heir newHeir = new Heir(
                     nameField.getText(),
                     addressField.getText(),
-                    DateUtil.parse(dateOfBirthField.getText()),
+                    dateOfBirthDatePicker.getValue(),
                     genderComboBox.getValue(),
                     new BigDecimal(netWorthField.getText()),
                     new BigDecimal(incomeField.getText()));
@@ -99,12 +99,6 @@ public class HeirCreateController {
         }
         if (addressField.getText() == null || addressField.getText().length() == 0) {
             alertMessage += "Not a valid address!\n";
-        }
-        if (!DateUtil.validDate(dateOfBirthField.getText())){
-            alertMessage += """
-                    Not a valid date!
-                    Please use format D. M. YYYY
-                    """;
         }
 
         if (!ProperFormats.positiveDecimalFormat(netWorthField.getText())){
