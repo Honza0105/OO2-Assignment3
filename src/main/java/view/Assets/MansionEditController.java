@@ -33,6 +33,9 @@ public class MansionEditController {
     private Label savedLabel;
 
     @FXML
+    private Label rentedLabel;
+
+    @FXML
     private ComboBox<Island> islandComboBox;
 
     @FXML
@@ -167,6 +170,7 @@ public class MansionEditController {
             alertMessage +="Please select the heir.\n";
         }
         if (alertMessage.length()==0 || pressedExit){
+            rentedLabel.setVisible(true);
             main.startRent(mansion,dateFromDatePicker.getValue(),dateTillDatePicker.getValue(),heirComboBox.getValue());
         }
         else{

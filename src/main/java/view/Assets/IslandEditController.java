@@ -47,6 +47,9 @@ public class IslandEditController {
     private Label savedLabel;
 
     @FXML
+    private Label rentedLabel;
+
+    @FXML
     private DatePicker dateFromDatePicker;
 
     @FXML
@@ -184,6 +187,7 @@ public class IslandEditController {
             alertMessage +="Please select the heir.\n";
         }
         if (alertMessage.length()==0 || pressedExit){
+            rentedLabel.setVisible(true);
             main.startRent(island,dateFromDatePicker.getValue(),dateTillDatePicker.getValue(),heirComboBox.getValue());
         }
         else{

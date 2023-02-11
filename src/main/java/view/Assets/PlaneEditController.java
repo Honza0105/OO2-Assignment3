@@ -35,6 +35,9 @@ public class PlaneEditController {
     private Label savedLabel;
 
     @FXML
+    private Label rentedLabel;
+
+    @FXML
     private ComboBox<Island> islandComboBox;
 
     @FXML
@@ -174,6 +177,7 @@ public class PlaneEditController {
             alertMessage +="Please select the heir.\n";
         }
         if (alertMessage.length()==0 || pressedExit){
+            rentedLabel.setVisible(true);
             main.startRent(plane,dateFromDatePicker.getValue(),dateTillDatePicker.getValue(),heirComboBox.getValue());
         }
         else{

@@ -42,6 +42,9 @@ public class YachtEditController {
     private Label savedLabel;
 
     @FXML
+    private Label rentedLabel;
+
+    @FXML
     private ComboBox<Island> islandComboBox;
 
     @FXML
@@ -195,6 +198,7 @@ public class YachtEditController {
             alertMessage +="Please select the heir.\n";
         }
         if (alertMessage.length()==0 || pressedExit){
+            rentedLabel.setVisible(true);
             main.startRent(yacht,dateFromDatePicker.getValue(),dateTillDatePicker.getValue(),heirComboBox.getValue());
         }
         else{
