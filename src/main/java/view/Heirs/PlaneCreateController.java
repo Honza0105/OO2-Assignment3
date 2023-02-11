@@ -80,8 +80,9 @@ public class PlaneCreateController {
             alert.setContentText("If not saved, all changes will be lost.");
             ButtonType buttonSaveBeforeExit = new ButtonType("Save before exit");
             ButtonType buttonExitAnyways = new ButtonType("Exit anyways");
+            ButtonType buttonCancel = new ButtonType("Cancel");
 
-            alert.getButtonTypes().setAll(buttonSaveBeforeExit, buttonExitAnyways);
+            alert.getButtonTypes().setAll(buttonSaveBeforeExit, buttonExitAnyways, buttonCancel);
 
             Optional<ButtonType> result = alert.showAndWait();
 
@@ -91,6 +92,8 @@ public class PlaneCreateController {
                 main.showHeirEdit(heir);
             } else if (result.get() == buttonExitAnyways) {
                 main.showHeirEdit(heir);
+            } else if (result.get() == buttonCancel) {
+                //do nothing
             }
 
         }
