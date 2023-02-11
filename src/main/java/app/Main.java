@@ -15,6 +15,7 @@ import view.Heirs.*;
 import view.Rents.RentsEditController;
 import view.Rents.RentsOverviewController;
 import view.RootLayoutController;
+import view.Statistics.AssetDistributionController;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -99,9 +100,11 @@ public class Main extends Application {
 	}
 
 	public ObservableList<Heir> getHeirObservableListWithoutOwner(Heir owner) {
-		heirObservableList.remove(owner);
-		return heirObservableList;
+		ObservableList<Heir> result = FXCollections.observableArrayList(heirObservableList);
+		result.remove(owner);
+		return result;
 	}
+
 
 	public ObservableList<Asset> getAssetObservableList() {
 		return assetObservableList;
@@ -350,6 +353,23 @@ public class Main extends Application {
 			RentsEditController controller = fxmlLoader.getController();
 			controller.setMain(this);
 			controller.setRent(rent);
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
+	}
+
+	public void showAssetDistribution() {
+		setEditScene(false);
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			fxmlLoader.setLocation(Main.class.getResource("/view/Statistics/AssetDistribution.fxml"));
+			System.out.println(fxmlLoader.getLocation());
+			AnchorPane assetDistribution = fxmlLoader.load();
+
+			rootLayout.setCenter(assetDistribution);
+			AssetDistributionController controller = fxmlLoader.getController();
+			controller.setMain(this);
 		}
 		catch (IOException e){
 			e.printStackTrace();

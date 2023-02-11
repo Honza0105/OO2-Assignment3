@@ -117,6 +117,15 @@ public class Heir {
 		return result;
 	}
 
+	public BigDecimal totalValue(){
+		BigDecimal valueOfAllAssets = new BigDecimal("0");
+		for (Asset asset: assets
+			 ) {
+			 valueOfAllAssets = valueOfAllAssets.add(asset.getValue());
+		}
+		return valueOfAllAssets;
+	}
+
 	public enum Gender { MALE, FEMALE, OTHER
 		
 	}

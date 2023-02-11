@@ -136,6 +136,10 @@ public class RootLayoutController {
 
 	}
 
+	public void onAssetDistribution(){
+		main.showAssetDistribution();
+	}
+
 	@FXML
 	public void onHelp(){
 		//To be implemented
