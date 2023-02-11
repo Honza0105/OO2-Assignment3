@@ -61,7 +61,7 @@ public class Main extends Application {
 		SortedSet<Asset> island1Assets = new TreeSet<>();
 		island1Assets.add(plane1);
 		island1Assets.add(mansion1);
-		Island island1 = new Island("Isla Grande", "Cool island tbh", new BigDecimal("2000000000"),new BigDecimal(1000000),99.9f,52.3269544f,4.9621217f, Island.Climate.TEMPERATE,island1Assets);
+		Island island1 = new Island("Isla Grande", "Cool island tbh", new BigDecimal("200000000"),new BigDecimal(1000000),99.9f,52.3269544f,4.9621217f, Island.Climate.TEMPERATE,island1Assets);
 		mansion1.setHomeIsland(island1);
 		islandObservableList.add(island1);
 		assetObservableList.add(island1);
@@ -73,6 +73,9 @@ public class Main extends Application {
 		heirObservableList.add(john);
 		Heir sara = new Heir("Sara Zlota", "Poland Danzig 1", LocalDate.of(1999,1,3), Heir.Gender.FEMALE, new BigDecimal("200000000"), new BigDecimal("10000"));
 		heirObservableList.add(sara);
+
+
+
 
 		sara.addAsset(mansion1);
 		assetHeirHashMap.put(mansion1,sara);
