@@ -91,11 +91,11 @@
                            <font>
                               <Font size="28.0" />
                            </font></Label>
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="159.0" text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                        <Button mnemonicParsing="false" onAction="#onDelete" prefHeight="32.0" prefWidth="159.0" text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="7">
                            <GridPane.margin>
                               <Insets left="152.0" />
                            </GridPane.margin></Button>
-                        <Label prefHeight="38.0" prefWidth="113.0" text="Rent Details">
+                        <Label prefHeight="36.0" prefWidth="236.0" text="Rent Details">
                            <font>
                               <Font size="31.0" />
                            </font>

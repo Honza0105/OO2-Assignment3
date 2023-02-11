@@ -3,6 +3,7 @@ package view.Rents;
 import app.Main;
 import domain.Rent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -63,7 +64,7 @@ public class RentsOverviewController {
         });
     }
 
-    private void showRentDetails(Rent rent){
+    public void showRentDetails(Rent rent){
         if (rent != null){
             occupantLabel.setText(rent.getOccupant().getName());
             startLabel.setText(rent.getStart().toString());
@@ -82,4 +83,20 @@ public class RentsOverviewController {
             assetLabel.setText("");
         }
     }
+
+    public void onDelete(){
+        if (rentTableView.getSelectionModel().getSelectedItem() == null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(main.getStage());
+            alert.setHeaderText("No rent selected");
+            alert.setContentText("Please select rent you want to delete.");
+            alert.showAndWait();
+        }
+        else{
+            main.getRentObservableList().remove(rentTableView.getSelectionModel().getSelectedItem());
+        }
+
+    }
+
+
 }
