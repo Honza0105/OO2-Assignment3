@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
@@ -87,7 +88,6 @@
             </Button>
             <ComboBox fx:id="genderComboBox" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <TextField fx:id="nameField" GridPane.columnIndex="1" />
-            <TextField fx:id="dateOfBirthField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="netWorthField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="incomeField" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <TextField fx:id="addressField" GridPane.columnIndex="3" />
@@ -102,6 +102,7 @@
                </GridPane.margin>
             </CheckBox>
             <ComboBox fx:id="assetsComboBox" onAction="#handleCreateNewAsset" prefHeight="25.0" prefWidth="213.0" promptText="Choose asset to be created" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dateOfBirthDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>

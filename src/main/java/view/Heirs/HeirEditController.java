@@ -18,13 +18,14 @@ public class HeirEditController {
     private TextField nameField;
 
     @FXML
-    private TextField dateOfBirthField;
+    private DatePicker dateOfBirthDatePicker;
 
     @FXML
     private TextField netWorthField;
 
     @FXML
     private ListView<Asset> assetListView;
+
 
     @FXML
     private TextField addressField;
@@ -63,7 +64,7 @@ public class HeirEditController {
 
     public void setHeir(Heir heir) {
         nameField.setText(heir.getName());
-        dateOfBirthField.setText(DateUtil.format(heir.getDateOfBirth()));
+        dateOfBirthDatePicker.setValue(heir.getDateOfBirth());
         netWorthField.setText(heir.getNetWorth().toString());
         addressField.setText(heir.getAddress());
         incomeField.setText(heir.getIncome().toString());
@@ -83,9 +84,6 @@ public class HeirEditController {
         }
         if (addressField.getText() == null || addressField.getText().length() == 0) {
             alertMessage += "Not a valid address!\n";
-        }
-        if (!DateUtil.validDate(dateOfBirthField.getText())){
-            alertMessage += "Not a valid date!\n";
         }
 
         if (!ProperFormats.positiveDecimalFormat(netWorthField.getText())){
@@ -115,7 +113,7 @@ public class HeirEditController {
         if (isInputValid()){
             heir.setName(nameField.getText());
             heir.setAddress(addressField.getText());
-            heir.setDateOfBirth(DateUtil.parse(dateOfBirthField.getText()));
+            heir.setDateOfBirth(dateOfBirthDatePicker.getValue());
             heir.setGender(genderComboBox.getValue());
             heir.setNetWorth(new BigDecimal(netWorthField.getText()));
             heir.setIncome(new BigDecimal(incomeField.getText()));
