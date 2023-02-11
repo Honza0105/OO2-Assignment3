@@ -146,7 +146,9 @@ public class YachtEditController {
                 removeFromIsland();
             }
             else{
-                yacht.setHomeIsland(islandComboBox.getValue());
+                if (islandComboBox.getValue() != null) {
+                    yacht.setHomeIsland(islandComboBox.getValue());
+                }
             }
 
 

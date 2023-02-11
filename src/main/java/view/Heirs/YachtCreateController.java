@@ -134,7 +134,9 @@ public class YachtCreateController {
             main.getAssetObservableList().add(newYacht);
             heir.addAsset(newYacht);
             main.getAssetHeirHashMap().put(newYacht,heir);
-            newYacht.setHomeIsland(islandComboBox.getValue());
+            if (islandComboBox.getValue() != null) {
+                newYacht.setHomeIsland(islandComboBox.getValue());
+            }
             savedLabel.setVisible(true);
             main.setSaved(true);
         }

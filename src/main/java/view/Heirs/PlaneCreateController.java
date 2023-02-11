@@ -120,7 +120,9 @@ public class PlaneCreateController {
             main.getAssetObservableList().add(newPlane);
             heir.addAsset(newPlane);
             main.getAssetHeirHashMap().put(newPlane,heir);
-            newPlane.setHomeIsland(islandComboBox.getValue());
+            if (islandComboBox.getValue() != null) {
+                newPlane.setHomeIsland(islandComboBox.getValue());
+            }
             savedLabel.setVisible(true);
             main.setSaved(true);
 

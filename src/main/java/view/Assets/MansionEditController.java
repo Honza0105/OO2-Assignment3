@@ -127,7 +127,9 @@ public class MansionEditController {
                 removeFromIsland();
             }
             else{
-                mansion.setHomeIsland(islandComboBox.getValue());
+                if (islandComboBox.getValue() != null) {
+                    mansion.setHomeIsland(islandComboBox.getValue());
+                }
             }
 
 

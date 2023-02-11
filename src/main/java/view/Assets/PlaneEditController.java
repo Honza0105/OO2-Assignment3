@@ -131,7 +131,9 @@ public class PlaneEditController {
                 removeFromIsland();
             }
             else{
-                plane.setHomeIsland(islandComboBox.getValue());
+                if (islandComboBox.getValue() != null) {
+                    plane.setHomeIsland(islandComboBox.getValue());
+                }
             }
 
 

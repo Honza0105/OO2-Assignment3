@@ -74,6 +74,22 @@ public class Main extends Application {
 		Heir sara = new Heir("Sara Zlota", "Poland Danzig 1", LocalDate.of(1999,1,3), Heir.Gender.FEMALE, new BigDecimal("200000000"), new BigDecimal("10000"));
 		heirObservableList.add(sara);
 
+		//more heirs:
+		Heir mike = new Heir("Mike Smith", "London Bridge 1", LocalDate.of(1980,4,12), Heir.Gender.MALE,new BigDecimal("3000000"),new BigDecimal("100000"));
+		heirObservableList.add(mike);
+		Heir anna = new Heir("Anna Brown", "Paris Eiffel 1", LocalDate.of(1992,5,6), Heir.Gender.FEMALE,new BigDecimal("50000000"),new BigDecimal("80000"));
+		heirObservableList.add(anna);
+		Heir jim = new Heir("Jim Star", "New York Central Park 1", LocalDate.of(1986,9,15), Heir.Gender.MALE,new BigDecimal("20000000"),new BigDecimal("120000"));
+		heirObservableList.add(jim);
+		Heir jessica = new Heir("Jessica Alba", "Los Angeles Sunset Boulevard 1", LocalDate.of(1985,2,25), Heir.Gender.FEMALE,new BigDecimal("70000000"),new BigDecimal("70000"));
+		heirObservableList.add(jessica);
+		Heir peter = new Heir("Peter Parker", "New York Broadway 1", LocalDate.of(1978,7,20), Heir.Gender.MALE,new BigDecimal("15000000"),new BigDecimal("90000"));
+		heirObservableList.add(peter);
+		Heir jane = new Heir("Jane Doe", "London Oxford Street 1", LocalDate.of(1984,11,5), Heir.Gender.FEMALE,new BigDecimal("40000000"),new BigDecimal("110000"));
+		heirObservableList.add(jane);
+		Heir tom = new Heir("Tom Cruise", "Los Angeles Hollywood 1", LocalDate.of(1962,7,3), Heir.Gender.MALE,new BigDecimal("25000000"),new BigDecimal("140000"));
+		heirObservableList.add(tom);
+
 
 
 
