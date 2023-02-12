@@ -121,8 +121,8 @@
                <GridPane.margin>
                   <Insets left="5.0" right="10.0" />
                </GridPane.margin></ComboBox>
-                  <Label fx:id="savedLabel" alignment="CENTER" minWidth="38.0" prefHeight="17.0" prefWidth="147.0" text="Saved" textFill="#1f9e45" visible="false" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                  <Button mnemonicParsing="false" onAction="#exitEditDialog" prefHeight="26.0" prefWidth="113.0" text="Exit" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                  <Label fx:id="savedLabel" alignment="CENTER" minWidth="38.0" prefHeight="17.0" prefWidth="147.0" text="Saved" textFill="#1f9e45" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#exitEditDialog" prefHeight="26.0" prefWidth="113.0" text="Exit" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -130,15 +130,18 @@
                   <Insets left="5.0" right="10.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#saveEditDialog" prefWidth="180.0" text="Save" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <Button mnemonicParsing="false" onAction="#saveEditDialog" prefWidth="180.0" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="5.0" right="10.0" />
                </GridPane.margin>
             </Button>
-                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#startRent" text="RENT" GridPane.rowIndex="4">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#startRent" text="RENT" GridPane.columnIndex="4" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="15.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
             </Button>
             <Label text="Rent from" GridPane.rowIndex="3">
                <GridPane.margin>
@@ -152,10 +155,13 @@
             </Label>
             <DatePicker fx:id="dateFromDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <DatePicker fx:id="dateTillDatePicker" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <Label fx:id="rentedLabel" alignment="CENTER" prefHeight="34.0" prefWidth="89.0" text="✓" textAlignment="CENTER" textFill="#319e2a" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Label fx:id="rentedLabel" alignment="CENTER" prefHeight="34.0" prefWidth="89.0" text="✓" textAlignment="CENTER" textFill="#319e2a" visible="false" GridPane.columnIndex="5" GridPane.rowIndex="4">
                       <font>
                           <Font size="19.0" />
                       </font>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
                   </Label>
             </children>
         </GridPane>

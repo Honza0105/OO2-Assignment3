@@ -173,10 +173,18 @@ public class PlaneEditController {
 
     public void startRent() {
         String alertMessage = "";
-        if (dateFromDatePicker.getValue().isAfter(dateTillDatePicker.getValue())){
+        if (dateFromDatePicker.getValue() == null) {
+            alertMessage += "Please select start date. \n";
+        }
+
+        if (dateTillDatePicker.getValue() == null) {
+            alertMessage += "Please select end date. \n";
+        }
+
+        if (dateFromDatePicker.getValue() != null && dateTillDatePicker.getValue() != null && dateFromDatePicker.getValue().isAfter(dateTillDatePicker.getValue())) {
             alertMessage +=  "Start date must be before end date.\n";
         }
-        if (dateFromDatePicker.getValue().isBefore(LocalDate.now())){
+        if (dateFromDatePicker.getValue() != null && dateTillDatePicker.getValue() != null && dateFromDatePicker.getValue().isBefore(LocalDate.now())){
             alertMessage += "Start date must not be before today.\n";
         }
         if (heirComboBox.getValue()==null) {

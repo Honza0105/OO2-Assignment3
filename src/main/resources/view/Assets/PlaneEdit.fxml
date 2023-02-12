@@ -93,7 +93,10 @@
                 </ButtonBar>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                     <children>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#startRent" text="RENT" />
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#startRent" text="RENT">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
                         <Label fx:id="rentedLabel" prefHeight="26.0" prefWidth="17.0" text="✓" textFill="#319e2a" visible="false">
                             <font>
                                 <Font size="19.0" />
