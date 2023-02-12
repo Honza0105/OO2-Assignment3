@@ -7,7 +7,10 @@ import javafx.fxml.FXML;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.temporal.ChronoUnit;
+import java.util.Comparator;
 
 public class RentedValueDistributionController {
 
@@ -30,17 +33,18 @@ public class RentedValueDistributionController {
 //        scatterChart.getData().add(series);
     }
 
-    public void setRentList(ObservableList<Rent> rentList){
+    public void setRentList(ObservableList<Rent> rentList) {
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setName("Distribution of Rented Value");
 
         ObservableList<XYChart.Data<String, Number>> data = FXCollections.observableArrayList();
-
         for (Rent rent : rentList) {
-            long daysBetween = ChronoUnit.DAYS.between(rent.getStart(), rent.getEnd());
-            data.add(new XYChart.Data<>(String.format("Day %d", daysBetween), rent.getRent().doubleValue()));
+            long totalDays = ChronoUnit.DAYS.between(rent.getStart(), rent.getEnd());
+            BigDecimal ratio = BigDecimal.valueOf(totalDays).divide(BigDecimal.valueOf(rentList.stream().mapToLong(r -> ChronoUnit.DAYS.between(r.getStart(), r.getEnd())).sum()), 2, RoundingMode.HALF_UP);
+            data.add(new XYChart.Data<>(ratio.toString(), rent.getRent()));
         }
 
+        data.sort(Comparator.comparing(d -> new BigDecimal(d.getXValue().toString())));
         series.setData(data);
 
         scatterChart.getData().add(series);

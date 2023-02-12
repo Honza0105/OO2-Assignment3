@@ -112,6 +112,12 @@ public class Main extends Application {
 		System.out.println(island1.removeAsset(plane1));
 		System.out.println(island1.getAssets());
 
+		Rent sampleRent2 = new Rent(mansion1,john,LocalDate.now(),LocalDate.of(2023,2,28),new BigDecimal("30000"),LocalDate.of(2023,3,10));
+		rentObservableList.add(sampleRent2);
+
+
+
+
 
 	}
 
