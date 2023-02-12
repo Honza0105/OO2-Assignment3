@@ -40,14 +40,13 @@ public class RentedValueDistributionController {
         ObservableList<XYChart.Data<String, Number>> data = FXCollections.observableArrayList();
         for (Rent rent : rentList) {
             long totalDays = ChronoUnit.DAYS.between(rent.getStart(), rent.getEnd());
-            BigDecimal ratio = BigDecimal.valueOf(totalDays).divide(BigDecimal.valueOf(rentList.stream().mapToLong(r -> ChronoUnit.DAYS.between(r.getStart(), r.getEnd())).sum()), 2, RoundingMode.HALF_UP);
-            data.add(new XYChart.Data<>(ratio.toString(), rent.getRent()));
+            data.add(new XYChart.Data<>(String.valueOf(totalDays), rent.getRent()));
         }
-
         data.sort(Comparator.comparing(d -> new BigDecimal(d.getXValue().toString())));
         series.setData(data);
 
         scatterChart.getData().add(series);
     }
+
 
 }
